@@ -14,6 +14,16 @@ $(window).scroll(function(){
   }
 })
 
+//Плавный скролл
+$(document).on('click', '.scroll-down a[href^="#"]', function (event) {
+  event.preventDefault();
+  var target = $($.attr(this, 'href'));
+  var targetScroll =  target.offset().top - 50
+  $('html, body').animate({
+      scrollTop: targetScroll
+  }, 500);
+});
+
 function showMemebers(evt, tabName) {
   var i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tabcontent");
@@ -27,3 +37,20 @@ function showMemebers(evt, tabName) {
   document.getElementById(tabName).style.display = "flex";
   evt.currentTarget.className += " p_about__button-active";
 }
+
+
+var swiper_ad_button_next = $('.swiper-ad-next');
+var swiper_ad_button_prev = $('.swiper-ad-prev');
+var mySwiperAd = new Swiper('.ad-item-swiper', {
+  slidesPerView: 1,
+  spaceBetween: 0,
+  loop: true,
+  navigation: {
+    nextEl: swiper_ad_button_next,
+    prevEl: swiper_ad_button_prev,
+  },
+  effect: 'fade',
+  fadeEffect: {
+    crossFade: true
+  },
+});

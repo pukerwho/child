@@ -5,6 +5,7 @@
 				<div class="b_bottom__title">
 					<?php _e('Допомагати - це просто!', 'child-theme'); ?>
 				</div>
+				<a href="/donate">
 				<div class="b_bottom__btn d-flex align-items-center">
 					<div class="arrow-yellow">
 						<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 31.49 31.49" class="d-flex">
@@ -16,6 +17,7 @@
 						<?php _e('Підтримати', 'child-theme'); ?>
 					</span>
 				</div>
+				</a>
 				<div class="b_bottom__partner">
 					<?php
 					$partners_info = carbon_get_theme_option( 'crb_partners' );
