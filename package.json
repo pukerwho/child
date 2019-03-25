@@ -1,7 +1,7 @@
 {
   "name": "start",
   "version": "1.0.0",
-  "description": "minimal-blank-theme =================== A simple, light and minimal blank theme, to start any wordpress project, without need of deleting or changing any code. Just add yours.",
+  "description": "Time to TOP",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

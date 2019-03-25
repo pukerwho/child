@@ -26,31 +26,18 @@ if( !isset( $content_width ) ) {
 
 require_once get_template_directory() . '/inc/carbon-fields/carbon-fields-plugin.php';
 require_once get_template_directory() . '/inc/custom-fields/settings-meta.php';
-require_once get_template_directory() . '/inc/custom-fields/apartments-meta.php';
+require_once get_template_directory() . '/inc/custom-fields/members-meta.php';
 require_once get_template_directory() . '/inc/custom-fields/pages-meta.php';
 require_once get_template_directory() . '/inc/TGM/example.php';
 
 
 register_nav_menus( array(
-    'head_menu' => 'Меню в шапке',
+  'head_menu' => 'Головне меню у шапці',
+  'aboutus_menu' => 'Меню про нас',
+  'news_menu' => 'Меню НОВИНИ',
+  'footer_menu' => 'Меню у футері',
 ) );
 
-// Register sidebars
-function registerThemeSidebars() {
-    if( !function_exists( 'register_sidebar' ) ) {
-        return;
-    }
-    register_sidebar( array(
-        'name' => 'Main sidebar',
-        'id' => 'main-sidebar',
-        'description' => '',
-        'before_widget' => '<div id="%1$s" class="widget %2$s">',
-        'after_widget' => '</div>',
-        'before_title' => '<h3 class="widget-title">',
-        'after_title' => '</h3>',
-    ) );
-}
-add_action( 'widgets_init', 'registerThemeSidebars' );
 function addAdminEditorStyle() {
     add_editor_style( get_stylesheet_directory_uri() . 'css/editor-style.css' );
 };
@@ -61,15 +48,8 @@ function theme_name_scripts() {
     wp_enqueue_style( 'jquery-ui', 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css', false, time() );
     wp_enqueue_script( 'jquery' );
     wp_enqueue_script( 'jquery-ui-core' );
-    wp_enqueue_script( 'jquery-ui-touch-punch', get_template_directory_uri() . '/js/jquery-ui-touch-punch.min.js', '','',true);
     wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/js/bootstrap.min.js', '','',true);
     wp_enqueue_script( 'scripts', get_template_directory_uri() . '/js/scripts.js', '','',true);
-    wp_localize_script( 'loadmore', 'loadmore_params', array(
-        'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php', 
-        'posts' => json_encode( $wp_query->query_vars ), 
-        'current_page' => get_query_var( 'paged' ) ? get_query_var('paged') : 1,
-        'max_page' => $wp_query->max_num_pages
-    ) );
  
     wp_enqueue_script( 'loadmore' );
 };
@@ -81,27 +61,66 @@ function load_custom_wp_admin_style() {
 }
 add_action( 'admin_enqueue_scripts', 'load_custom_wp_admin_style' );
 
-function loadmore_ajax_handler(){
- 
-    // prepare our arguments for the query
-    $args = json_decode( stripslashes( $_POST['query'] ), true );
-    $args['paged'] = $_POST['page'] + 1; 
-    $args['post_status'] = 'publish';
- 
-   
-    query_posts( $args );
- 
-    if( have_posts() ) :
- 
-        
-        while( have_posts() ): the_post();
-            get_template_part( 'blocks/default/loop', 'default' );
-        
-        endwhile;
- 
-    endif;
-    die; 
+function create_post_type() {
+    register_post_type( 'news',
+        array(
+            'labels' => array(
+                'name' => __( 'Новини' ),
+                'singular_name' => __( 'Новина' )
+            ),
+            'public' => true,
+            'has_archive' => true,
+            'hierarchical' => true,
+            'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' ),
+        )
+    );
+    register_post_type( 'blogs',
+        array(
+            'labels' => array(
+                'name' => __( 'Блог' ),
+                'singular_name' => __( 'Блог' )
+            ),
+            'public' => true,
+            'has_archive' => true,
+            'hierarchical' => true,
+            'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' ),
+        )
+    );
+    register_post_type( 'projects',
+        array(
+            'labels' => array(
+                'name' => __( 'Проекти' ),
+                'singular_name' => __( 'Проект' )
+            ),
+            'public' => true,
+            'has_archive' => true,
+            'hierarchical' => true,
+            'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' ),
+        )
+    );
+    register_post_type( 'members',
+        array(
+            'labels' => array(
+                'name' => __( 'Учасники' ),
+                'singular_name' => __( 'Учасник' )
+            ),
+            'public' => true,
+            'has_archive' => true,
+            'hierarchical' => true,
+            'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' ),
+        )
+    );
+    register_post_type( 'ad',
+        array(
+            'labels' => array(
+                'name' => __( 'Анонси' ),
+                'singular_name' => __( 'Анонс' )
+            ),
+            'public' => true,
+            'has_archive' => true,
+            'hierarchical' => true,
+            'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' ),
+        )
+    );
 }
-
-add_action('wp_ajax_loadmore', 'loadmore_ajax_handler'); 
-add_action('wp_ajax_nopriv_loadmore', 'loadmore_ajax_handler'); 
+add_action( 'init', 'create_post_type' ); 

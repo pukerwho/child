@@ -21,7 +21,31 @@
 <body <?php echo body_class(); ?>>
   <!-- <div class="preloader"></div> -->
   
-  <header id="header" class="header" role="banner">
-    
+  <header id="header" class="header d-flex align-items-center" role="banner">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="header__logo">
+              <img src="<?php bloginfo('template_url') ?>/img/logo.png" srcset="<?php bloginfo('template_url') ?>/img/logo-01@2x.png 2x, <?php bloginfo('template_url') ?>/img/logo-01@3x.png 3x" alt="Logo">
+            </div>
+            <div class="header__menu">
+              <?php wp_nav_menu([
+                  'theme_location' => 'head_menu',
+                  'container' => 'nav',
+                  'container_class' => 'head_menu',
+                  'menu_id' => 'head_menu',
+                  'menu_class' => 'd-flex'
+                ]); ?>
+            </div>
+            <div class="header__lang d-flex">
+              <li class="header__lang-active"><a href="#">укр</a></li>
+              <li><a href="#">рус</a></li>
+              <li><a href="#">en</a></li>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </header>
   <section id="content" role="main">
