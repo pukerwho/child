@@ -9,7 +9,7 @@
 						<div class="p_page__welcome-title p_projects__welcome-title text-center">
 							Блог
 						</div>
-						<div class="p_page__welcome-img p_blog__welcome-img">
+						<div class="p_page__welcome-img p_blog__welcome-img" style="bottom: 13px;" >
 							<img src="<?php echo carbon_get_theme_option('crb_blogs_p_thumb'); ?>" alt="">
 						</div>
 					</div>

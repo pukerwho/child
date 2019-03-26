@@ -9582,7 +9582,7 @@ a:hover {
   .p_projects__welcome-img {
     height: 100%;
     position: absolute;
-    bottom: 70px;
+    bottom: 21px;
     right: 0; }
   .p_projects__welcome-arrow {
     width: 60px;
@@ -9746,7 +9746,7 @@ a:hover {
 .p_news__welcome-img {
   height: 100%;
   position: absolute;
-  bottom: -13px;
+  bottom: -63px;
   left: 0; }
 .p_news__buttons {
   display: -webkit-box;
