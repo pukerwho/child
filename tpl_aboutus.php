@@ -9,20 +9,22 @@ Template Name: Про нас
 <div class="p_page">
 	<div class="p_page__welcome" style="background-color: #1664da;">
 		<div class="p_page__welcome-block d-flex align-items-center">
-			<div class="container">
-				<div class="row">
+			<div class="container height-100">
+				<div class="row height-100">
 					<div class="col-md-12">
-						<div class="p_page__welcome-img" style="bottom: -2px;">
+						<div class="p_page__welcome-img" style="bottom: -51px; height: auto;">
 							<img src="<?php echo carbon_get_theme_option('crb_aboutus_p_thumb'); ?>" alt="">
 						</div>
-						<div class="p_page__welcome-title text-center">
+						<div class="p_page__welcome-title text-center" style="padding-top: 70px;">
 							<?php _e('Про нас', 'child-theme'); ?>
 						</div>
-						<div class="p_page__welcome-heading">
-							<?php _e('Асоціація', 'child-theme'); ?>
-						</div>
-						<div class="p_page__welcome-text">
-							<?php echo carbon_get_theme_option('crb_aboutus_p_text'); ?>
+						<div class="p_page__welcome-content">
+							<div class="p_page__welcome-heading">
+								<?php _e('Асоціація', 'child-theme'); ?>
+							</div>
+							<div class="p_page__welcome-text">
+								<?php echo carbon_get_theme_option('crb_aboutus_p_text'); ?>
+							</div>
 						</div>
 					</div>
 				</div>

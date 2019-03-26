@@ -9010,6 +9010,9 @@ a:hover {
 .p-relative {
   position: relative; }
 
+.height-100 {
+  height: 100%; }
+
 .color-blue {
   color: #0046ca !important; }
 
@@ -9222,9 +9225,12 @@ a:hover {
     left: 987px; }
 
 .p_page__welcome {
-  height: 450px;
+  height: 550px;
   background-color: #f6a501;
   padding-top: 100px; }
+  .p_page__welcome-content {
+    position: absolute;
+    bottom: 124px; }
   .p_page__welcome-title {
     color: #ffffff;
     font-size: 60px;
@@ -9591,6 +9597,9 @@ a:hover {
     margin: auto;
     padding: 10px; }
 
+.p_contact__item iframe {
+  width: 100%;
+  height: 320px; }
 .p_contact__title {
   color: #f6a501;
   font-size: 70px;
@@ -9620,6 +9629,8 @@ a:hover {
     margin-bottom: 46px; }
   .p_contact__text a {
     color: #606060; }
+.p_contact__form p {
+  margin: 0; }
 .p_contact__form input {
   width: 100%;
   -webkit-border-radius: 6px;
@@ -9668,7 +9679,8 @@ a:hover {
     transition: -webkit-box-shadow 0.4s;
     transition: box-shadow 0.4s;
     transition: box-shadow 0.4s, -webkit-box-shadow 0.4s; }
-.p_contact__form button {
+.p_contact__form [type="submit"] {
+  width: auto;
   color: #ffffff;
   font-family: Helvetica;
   font-size: 15px;
@@ -9704,6 +9716,7 @@ a:hover {
         -o-object-fit: cover;
         object-fit: cover; }
     .b_news__item-title {
+      min-height: 90px;
       color: #1664da;
       font-size: 20px;
       font-weight: 300;
@@ -9758,6 +9771,7 @@ a:hover {
   -webkit-border-radius: 24.5px;
   border-radius: 24.5px;
   border: solid 1px #1664da;
+  cursor: pointer;
   padding: 11px 24px;
   margin-right: 30px; }
   .p_news__button-active {
@@ -9765,6 +9779,9 @@ a:hover {
     background-color: #1664da; }
   .p_news__button:last-child {
     margin-right: 0; }
+
+#Podii {
+  display: none; }
 
 .p_blog__welcome-arrow {
   width: 60px;

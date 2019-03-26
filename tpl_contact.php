@@ -18,12 +18,9 @@ Template Name: Контакти
 						<div class="p_contact__subtitle">
 							<?php _e('Написати електонного листа', 'child-theme'); ?>
 						</div>
-						<form action="#">
-							<input type="text" placeholder="Ваше ім'я">
-							<input type="email" placeholder="E-mail">
-							<textarea name="message" id="" cols="30" rows="5" placeholder="Ваш запит"></textarea>
-							<button><?php _e('Відправити', 'child-theme'); ?></button>
-						</form>
+						<div>
+							<?php echo do_shortcode('[contact-form-7 id="56" title="Контакт"]') ?>
+						</div>
 					</div>
 					<div class="p_contact__item">
 						<div class="p_contact__subtitle">
@@ -31,12 +28,16 @@ Template Name: Контакти
 						</div>
 						<div class="p_contact__text">
 							<div class="p_contact__text-address">
-								м. Київ, Турівська 15 (754,50 km) 04080	
+								<?php echo carbon_get_theme_option('crb_contact_address'); ?>
 							</div>
 						</div>
 						<div class="p_contact__text">
 							<div class="p_contact__text-phone">
-								<a href="tel:+380 44 428 5718">+380 44 428 5718</a>	
+								<?php 
+								$phones = carbon_get_theme_option( 'crb_contact_phones' );
+								foreach ( $phones as $phone ): ?>
+									<a href="tel:<?php echo $phone['crb_contact_phone'] ?>"><?php echo $phone['crb_contact_phone'] ?></a>
+								<?php endforeach; ?>
 							</div>
 						</div>
 						<div class="p_contact__subtitle mb-20">
@@ -44,14 +45,14 @@ Template Name: Контакти
 						</div>
 						<div class="footer__social d-flex align-items-center">
 							<li>
-								<a href="#">
+								<a href="<?php echo carbon_get_theme_option('crb_contact_facebook'); ?>" target="_blank">
 									<svg xmlns="http://www.w3.org/2000/svg" width="9" height="19" viewBox="0 0 9 19">
 									  <path fill="#38569A" fill-rule="evenodd" d="M5.237.048C3.519.266 2.404 1.29 2.027 2.985c-.07.327-.092.628-.11 1.774L1.89 6.145l-.934.008-.934.013L.01 7.831 0 9.5h1.904V19h4.028V9.5h2.7l.018-.1c.013-.053.084-.715.159-1.469.075-.754.15-1.464.164-1.582l.026-.204H5.927l.014-1.146c.013-1.299.035-1.382.358-1.591l.177-.118 1.235-.013 1.23-.013V0L7.23.004C6.282.01 5.388.026 5.237.048z"/>
 									</svg>
 								</a>
 							</li>
 							<li>
-								<a href="#">
+								<a href="<?php echo carbon_get_theme_option('crb_contact_instagram'); ?>" target="_blank">
 									<svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21">
 								    <defs>
 							        <linearGradient id="a" x1="50%" x2="50%" y1="0%" y2="100%">
@@ -65,7 +66,7 @@ Template Name: Контакти
 								</a>
 							</li>
 							<li>
-								<a href="#">
+								<a href="<?php echo carbon_get_theme_option('crb_contact_youtube'); ?>" target="_blank">
 									<svg xmlns="http://www.w3.org/2000/svg" width="25" height="19" viewBox="0 0 25 19">
 								    <path fill="#FF001D" fill-rule="nonzero" d="M7.278.081c-2.479.085-4.004.211-4.56.38C1.467.841.696 1.861.364 3.573-.058 5.75-.125 11.703.24 14.705c.232 1.907.854 3.079 1.931 3.61 1.028.515 3.424.675 10.288.683 4.65 0 8.007-.101 9.242-.295 1.8-.287 2.76-1.544 3.06-3.998.364-3.002.298-8.956-.125-11.132-.323-1.704-1.061-2.69-2.313-3.104C21.154.081 13.246-.12 7.278.081zM13.437 7.2c2.039 1.24 3.705 2.285 3.705 2.319 0 .034-1.666 1.08-3.705 2.32a548.674 548.674 0 0 0-3.896 2.386l-.19.118V4.695l.19.118c.1.067 1.848 1.138 3.896 2.387z"/>
 									</svg>
@@ -74,7 +75,7 @@ Template Name: Контакти
 						</div>
 					</div>
 					<div class="p_contact__item">
-						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2539.225622585653!2d30.50951181573229!3d50.474143279478724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4ce11862e92e1%3A0xa53c85d3fc08c686!2z0YPQuy4g0KLRg9GA0L7QstGB0LrQsNGPLCAxNSwg0JrQuNC10LIsIDAyMDAw!5e0!3m2!1sru!2sua!4v1552819078020" width="100%" height="320px" frameborder="0" style="border:0" allowfullscreen></iframe>
+						<?php echo carbon_get_theme_option('crb_contact_map'); ?>
 					</div>
 				</div>
 			</div>

@@ -26,7 +26,7 @@ if( !isset( $content_width ) ) {
 
 require_once get_template_directory() . '/inc/carbon-fields/carbon-fields-plugin.php';
 require_once get_template_directory() . '/inc/custom-fields/settings-meta.php';
-require_once get_template_directory() . '/inc/custom-fields/members-meta.php';
+require_once get_template_directory() . '/inc/custom-fields/post-meta.php';
 require_once get_template_directory() . '/inc/custom-fields/pages-meta.php';
 require_once get_template_directory() . '/inc/TGM/example.php';
 
@@ -125,3 +125,17 @@ function create_post_type() {
     );
 }
 add_action( 'init', 'create_post_type' ); 
+
+function my_login_logo() { ?>
+  <style type="text/css">
+    #login h1 a, .login h1 a {
+      background-image: url(<?php bloginfo('template_url') ?>/img/logo.png);
+      width: 100%;
+      height: 53px;
+      background-size: auto;
+      padding: 20px 0px;
+      background-position: center;
+    }
+  </style>
+<?php }
+add_action( 'login_enqueue_scripts', 'my_login_logo' );

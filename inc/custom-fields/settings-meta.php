@@ -18,6 +18,9 @@ function crb_attach_theme_options() {
         Field::make( 'rich_text', 'crb_aboutus_b_text', 'Короткий текст на головній сторінці МИ ДОПОМАГАЄМО ДІТЯМ' ),
         Field::make( 'image', 'crb_aboutus_b_thumb', 'Зображення на головній сторінці МИ ДОПОМАГАЄМО ДІТЯМ' )->set_value_type( 'url'),
     ) )
+    ->add_tab( __('Проекти'), array(
+        Field::make( 'image', 'crb_projects_p_thumb', 'Зображення в шапці на сторінці ПРОЕКТИ' )->set_value_type( 'url'),
+    ) )
     ->add_tab( __('Партнери'), array(
         Field::make( 'complex', 'crb_partners', 'Партнери' )
             ->set_layout( 'tabbed-horizontal')
@@ -38,6 +41,8 @@ function crb_attach_theme_options() {
             ->add_fields( array(
                 Field::make( 'text', 'crb_contact_phone', 'Номер телефона' ),
         ) ),
+        Field::make( 'text', 'crb_contact_address', 'Ваша адреса' ),
+        Field::make( 'text', 'crb_contact_map', 'Google Карта (через iframe)' ),
         Field::make( 'text', 'crb_contact_facebook', 'Посилання на Facebook' ),
         Field::make( 'text', 'crb_contact_instagram', 'Посилання на Instagram' ),
         Field::make( 'text', 'crb_contact_youtube', 'Посилання на Youtube' ),

@@ -1,3 +1,5 @@
+<?php get_header(); ?>
+
 <div class="p_page">
 	<div class="p_page__welcome"  style="background-color: #f6a501;">
 		<div class="p_page__welcome-block p_projects__welcome-block d-flex align-items-center">
@@ -8,7 +10,7 @@
 							<?php _e('Наші проекти', 'child-theme'); ?>
 						</div>
 						<div class="p_page__welcome-img p_projects__welcome-img">
-							<img src="img/projects-welcome.png" alt="">
+							<img src="<?php echo carbon_get_theme_option('crb_projects_p_thumb'); ?>" alt="">
 						</div>
 					</div>
 				</div>
@@ -35,3 +37,5 @@
 <section id="b_main_news">
 	<?php get_template_part('blocks/main/b_main_news', 'default') ?>
 </section>
+
+<?php get_footer(); ?>

@@ -11,6 +11,12 @@ function crb_post_theme_options() {
       Field::make( 'text', 'crb_members_position', 'Посада' ),
       Field::make( 'checkbox', 'crb_members_rada', 'Опікунська рада?' )->set_option_value('no'),
   	));
+  Container::make( 'post_meta', 'More' )
+    ->where( 'post_type', '=', 'news' )
+    ->add_fields( array(
+      Field::make( 'checkbox', 'crb_news_newsroom', 'У Newsroom?' )->set_option_value('no'),
+      Field::make( 'checkbox', 'crb_news_podii', 'Подія?' )->set_option_value('no'),
+  	));
 }
 
 ?>

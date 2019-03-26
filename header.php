@@ -27,7 +27,9 @@
         <div class="col-md-12">
           <div class="d-flex justify-content-between align-items-center">
             <div class="header__logo">
-              <img src="<?php bloginfo('template_url') ?>/img/logo.png" srcset="<?php bloginfo('template_url') ?>/img/logo-01@2x.png 2x, <?php bloginfo('template_url') ?>/img/logo-01@3x.png 3x" alt="Logo">
+              <a href="<?php echo home_url(); ?>">
+                <img src="<?php bloginfo('template_url') ?>/img/logo.png" srcset="<?php bloginfo('template_url') ?>/img/logo-01@2x.png 2x, <?php bloginfo('template_url') ?>/img/logo-01@3x.png 3x" alt="Logo">
+              </a>
             </div>
             <div class="header__menu">
               <?php wp_nav_menu([

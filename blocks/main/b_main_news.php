@@ -12,9 +12,11 @@
 					<div class="b_news__item-img">
 						<img src="<?php echo get_the_post_thumbnail_url(); ?>">
 					</div>
-					<div class="b_news__item-title">
-						<?php the_title(); ?>
-					</div>
+					<a href="<?php echo get_permalink(); ?>">
+						<div class="b_news__item-title">
+							<?php the_title(); ?>
+						</div>
+					</a>
 					<div class="b_news__item-date">
 						23 серпня 2018
 					</div>
