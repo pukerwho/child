@@ -7,7 +7,7 @@
 				<div class="row">
 					<div class="col-md-12">
 						<div class="p_page__welcome-title p_projects__welcome-title text-center">
-							Блог
+							<?php _e('Блог', 'child-theme'); ?>
 						</div>
 						<div class="p_page__welcome-img p_blog__welcome-img" style="bottom: 13px;" >
 							<img src="<?php echo carbon_get_theme_option('crb_blogs_p_thumb'); ?>" alt="">
@@ -28,9 +28,11 @@
 		<div class="container">
 			<div class="row">
 				<?php 
-			  $custom_query_blogs = new WP_Query( array( 'post_type' => 'blogs', 'posts_per_page' => 9) );
+				global $wp_query, $wp_rewrite;  
+    		$wp_query->query_vars['paged'] > 1 ? $current = $wp_query->query_vars['paged'] : $current = 1;
+			  $custom_query_blogs = new WP_Query( array( 'post_type' => 'blogs', 'posts_per_page' => 9, 'paged' => $current) );
 			  if ($custom_query_blogs->have_posts()) : while ($custom_query_blogs->have_posts()) : $custom_query_blogs->the_post(); ?>
-				<div class="col-md-4">
+				<div class="col-md-4 mb-40">
 					<div class="b_news__item">
 						<div class="b_news__item-img">
 							<img src="<?php echo get_the_post_thumbnail_url(); ?>">
@@ -41,7 +43,7 @@
 							</div>
 						</a>
 						<div class="b_news__item-date">
-							23 серпня 2018
+							<?php echo get_the_date('j F Y') ?>
 						</div>
 						<div class="b_news__item-more d-flex align-items-center justify-content-end">
 							<a href="<?php echo get_permalink(); ?>">
@@ -59,6 +61,23 @@
 					</div>
 				</div>
 				<?php endwhile; endif; ?>
+			</div>
+			<div class="row">
+				<div class="col-md-12 text-center">
+					<div class="b_pagination">
+						<?php 
+							$big = 999999999; // уникальное число
+							echo paginate_links( array(
+							'format'  => 'page/%#%',
+							'current'   => $current,
+							'total'   => $custom_query_blogs->max_num_pages,
+							'prev_next' => true,
+							'next_text' => (''),
+							'prev_text' => ('')
+							)); 
+						?>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>

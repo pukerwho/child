@@ -36,9 +36,12 @@
 		<div class="container">
 			<div id="Newsroom" class="row tabcontent">
 				<?php 
+				global $wp_query, $wp_rewrite;  
+    		$wp_query->query_vars['paged'] > 1 ? $current = $wp_query->query_vars['paged'] : $current = 1;
 			  $custom_query_news = new WP_Query( array( 
 			  	'post_type' => 'news', 
 			  	'posts_per_page' => 9,
+			  	'paged' => $current,
 			  	'meta_query' => array(
 						array(
 							'key'     => 'crb_news_newsroom',
@@ -48,7 +51,51 @@
 					)
 			  ) );
 			  if ($custom_query_news->have_posts()) : while ($custom_query_news->have_posts()) : $custom_query_news->the_post(); ?>
-				<div class="col-md-4">
+				<div class="col-md-4 mb-40">
+					<div class="b_news__item">
+						<div class="b_news__item-img">
+							<img src="<?php echo get_the_post_thumbnail_url(); ?>">
+						</div>
+						<a href="<?php echo get_permalink(); ?>">
+							<div class="b_news__item-title">
+								<?php the_title(); ?>
+							</div>
+						</a>
+						<div class="b_news__item-date">
+							<?php echo get_the_date('j F Y') ?>
+						</div>
+						<div class="b_news__item-more d-flex align-items-center justify-content-end">
+							<a href="<?php echo get_permalink(); ?>">
+								<span><?php _e('Читати більше', 'child-theme'); ?></span>
+							</a>
+							<a href="<?php echo get_permalink(); ?>">
+								<div class="arrow-blue">
+									<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 31.49 31.49">
+									<path style="fill:#ffffff;" d="M21.205,5.007c-0.429-0.444-1.143-0.444-1.587,0c-0.429,0.429-0.429,1.143,0,1.571l8.047,8.047H1.111
+										C0.492,14.626,0,15.118,0,15.737c0,0.619,0.492,1.127,1.111,1.127h26.554l-8.047,8.032c-0.429,0.444-0.429,1.159,0,1.587
+										c0.444,0.444,1.159,0.444,1.587,0l9.952-9.952c0.444-0.429,0.444-1.143,0-1.571L21.205,5.007z"/>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+				<?php endwhile; endif; ?>
+			</div>
+			<div id="Podii" class="row tabcontent">
+				<?php 
+			  $custom_query_podii = new WP_Query( array( 
+			  	'post_type' => 'news', 
+			  	'posts_per_page' => 9,
+			  	'meta_query' => array(
+						array(
+							'key'     => 'crb_news_podii',
+							'value'   => 'no',
+							'compare' => '=',
+						),
+					)
+			  ) );
+			  if ($custom_query_podii->have_posts()) : while ($custom_query_podii->have_posts()) : $custom_query_podii->the_post(); ?>
+				<div class="col-md-4 mb-40">
 					<div class="b_news__item">
 						<div class="b_news__item-img">
 							<img src="<?php echo get_the_post_thumbnail_url(); ?>">
@@ -78,49 +125,22 @@
 				</div>
 				<?php endwhile; endif; ?>
 			</div>
-			<div id="Podii" class="row tabcontent">
-				<?php 
-			  $custom_query_news = new WP_Query( array( 
-			  	'post_type' => 'news', 
-			  	'posts_per_page' => 9,
-			  	'meta_query' => array(
-						array(
-							'key'     => 'crb_news_podii',
-							'value'   => 'no',
-							'compare' => '=',
-						),
-					)
-			  ) );
-			  if ($custom_query_news->have_posts()) : while ($custom_query_news->have_posts()) : $custom_query_news->the_post(); ?>
-				<div class="col-md-4">
-					<div class="b_news__item">
-						<div class="b_news__item-img">
-							<img src="<?php echo get_the_post_thumbnail_url(); ?>">
-						</div>
-						<a href="<?php echo get_permalink(); ?>">
-							<div class="b_news__item-title">
-								<?php the_title(); ?>
-							</div>
-						</a>
-						<div class="b_news__item-date">
-							23 серпня 2018
-						</div>
-						<div class="b_news__item-more d-flex align-items-center justify-content-end">
-							<a href="<?php echo get_permalink(); ?>">
-								<span><?php _e('Читати більше', 'child-theme'); ?></span>
-							</a>
-							<a href="<?php echo get_permalink(); ?>">
-								<div class="arrow-blue">
-									<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 31.49 31.49">
-									<path style="fill:#ffffff;" d="M21.205,5.007c-0.429-0.444-1.143-0.444-1.587,0c-0.429,0.429-0.429,1.143,0,1.571l8.047,8.047H1.111
-										C0.492,14.626,0,15.118,0,15.737c0,0.619,0.492,1.127,1.111,1.127h26.554l-8.047,8.032c-0.429,0.444-0.429,1.159,0,1.587
-										c0.444,0.444,1.159,0.444,1.587,0l9.952-9.952c0.444-0.429,0.444-1.143,0-1.571L21.205,5.007z"/>
-								</div>
-							</a>
-						</div>
+			<div class="row">
+				<div class="col-md-12 text-center">
+					<div class="b_pagination">
+						<?php 
+							$big = 999999999; // уникальное число
+							echo paginate_links( array(
+							'format'  => 'page/%#%',
+							'current'   => $current,
+							'total'   => $custom_query_news->max_num_pages,
+							'prev_next' => true,
+							'next_text' => (''),
+							'prev_text' => ('')
+							)); 
+						?>
 					</div>
 				</div>
-				<?php endwhile; endif; ?>
 			</div>
 		</div>
 	</div>

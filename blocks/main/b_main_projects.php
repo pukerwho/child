@@ -19,7 +19,7 @@
 											<?php the_title(); ?>
 										</div>
 										<div class="b_projects__item-date">
-											Проект від <span>12.01.2016</span>
+											Проект від <span><?php echo get_the_date('d.m.Y') ?></span>
 										</div>
 									</div>
 									<div class="arrow-blue">

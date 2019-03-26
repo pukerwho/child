@@ -52,7 +52,7 @@ function showNews(evt, tabName) {
   evt.currentTarget.className += " p_news__button-active";
 }
 
-
+//Слайдер Анонси
 var swiper_ad_button_next = $('.swiper-ad-next');
 var swiper_ad_button_prev = $('.swiper-ad-prev');
 var mySwiperAd = new Swiper('.ad-item-swiper', {
@@ -67,4 +67,23 @@ var mySwiperAd = new Swiper('.ad-item-swiper', {
   fadeEffect: {
     crossFade: true
   },
+});
+
+var swiper_single_button_next = $('.swiper-single-next');
+var swiper_single_button_prev = $('.swiper-single-prev');
+var mySwiperAd = new Swiper('.single-gallery-swiper', {
+  slidesPerView: 4,
+  spaceBetween: 30,
+  navigation: {
+    nextEl: swiper_single_button_next,
+    prevEl: swiper_single_button_prev,
+  },
+  pagination: {
+    el: '.single-gallery-pagination',
+  },
+});
+
+//Back link
+$(document).on('click', '.single__back', function(){
+  history.back();
 });
