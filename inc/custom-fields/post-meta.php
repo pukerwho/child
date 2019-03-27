@@ -26,9 +26,7 @@ function crb_post_theme_options() {
   Container::make( 'post_meta', 'More' )
     ->where( 'post_type', '=', 'reports' )
     ->add_fields( array(
-      Field::make( 'file', 'crb_reports_file', 'Завантажити файл (xls)' )->set_value_type( array( 'url' ) )
-
-
+      Field::make( 'file', 'crb_reports_file', 'Завантажити файл (xls)' )->set_value_type( 'url' )
     ));
 }
 
