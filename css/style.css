@@ -9714,13 +9714,14 @@ blockquote {
     text-align: center;
     margin-bottom: 20px; }
   .p_about__reports-text {
-    min-width: 590px;
+    max-width: 590px;
     color: #606060;
     font-family: 'Roboto Light';
     font-size: 17px;
     font-weight: 300;
     line-height: 1.59;
     text-align: center;
+    margin: auto;
     margin-bottom: 50px; }
 
 .about-partner-pagination {
