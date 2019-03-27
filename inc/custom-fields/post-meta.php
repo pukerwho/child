@@ -23,6 +23,13 @@ function crb_post_theme_options() {
     ->add_fields( array(
       Field::make( 'media_gallery', 'crb_blogs_photos', 'Галерея' )->set_type( array( 'image' ) )
     ));
+  Container::make( 'post_meta', 'More' )
+    ->where( 'post_type', '=', 'reports' )
+    ->add_fields( array(
+      Field::make( 'file', 'crb_reports_file', 'Завантажити файл (xls)' )->set_value_type( array( 'url' ) )
+
+
+    ));
 }
 
 ?>

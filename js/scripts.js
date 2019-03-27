@@ -69,6 +69,7 @@ var mySwiperAd = new Swiper('.ad-item-swiper', {
   },
 });
 
+//Слайдер Новости/Блог
 var swiper_single_button_next = $('.swiper-single-next');
 var swiper_single_button_prev = $('.swiper-single-prev');
 var mySwiperAd = new Swiper('.single-gallery-swiper', {
@@ -80,6 +81,36 @@ var mySwiperAd = new Swiper('.single-gallery-swiper', {
   },
   pagination: {
     el: '.single-gallery-pagination',
+  },
+});
+
+//Слайдер Партнеры
+var swiper_partner_button_next = $('.swiper-partner-next');
+var swiper_partner_button_prev = $('.swiper-partner-prev');
+var mySwiperAd = new Swiper('.about-partner-swiper', {
+  slidesPerView: 6,
+  spaceBetween: 50,
+  navigation: {
+    nextEl: swiper_partner_button_next,
+    prevEl: swiper_partner_button_prev,
+  },
+  pagination: {
+    el: '.about-partner-pagination',
+  },
+});
+
+//Слайдер Отчеты
+var swiper_reports_button_next = $('.swiper-reports-next');
+var swiper_reports_button_prev = $('.swiper-reports-prev');
+var mySwiperAd = new Swiper('.about-reports-swiper', {
+  slidesPerView: 8,
+  spaceBetween: 66,
+  navigation: {
+    nextEl: swiper_reports_button_next,
+    prevEl: swiper_reports_button_prev,
+  },
+  pagination: {
+    el: '.about-reports-pagination',
   },
 });
 

@@ -68,7 +68,7 @@
 	    	<img src="<?php bloginfo('template_url') ?>/img/single-arrow.svg" width="40px" alt="">
 	    </div>
 	    <div class="swiper-pagination single-gallery-pagination"></div>
-	    <div class="swiper-single-next" style="transform: rotate(180deg);">
+	    <div class="swiper-single-next" style="transform: rotateY(180deg);">
 	    	<img src="<?php bloginfo('template_url') ?>/img/single-arrow.svg" width="40px" alt="">
 	    </div>	
 		</div>

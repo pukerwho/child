@@ -124,8 +124,26 @@ function create_post_type() {
             'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' ),
         )
     );
+    register_post_type( 'reports',
+        array(
+            'labels' => array(
+                'name' => __( 'Отчеты' ),
+                'singular_name' => __( 'Отчет' )
+            ),
+            'public' => true,
+            'has_archive' => true,
+            'hierarchical' => true,
+            'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' ),
+        )
+    );
 }
 add_action( 'init', 'create_post_type' ); 
+
+function my_custom_upload_mimes($mimes = array()) {
+    $mimes['xls'] = "application/excel";
+    return $mimes;
+}
+add_action('upload_mimes', 'my_custom_upload_mimes');
 
 function my_login_logo() { ?>
   <style type="text/css">
