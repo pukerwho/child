@@ -127,8 +127,8 @@ function create_post_type() {
     register_post_type( 'reports',
         array(
             'labels' => array(
-                'name' => __( 'Отчеты' ),
-                'singular_name' => __( 'Отчет' )
+                'name' => __( 'Звіти' ),
+                'singular_name' => __( 'Звіт' )
             ),
             'public' => true,
             'has_archive' => true,

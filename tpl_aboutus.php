@@ -166,7 +166,7 @@ Template Name: Про нас
 							$custom_query_reports = new WP_Query( array( 'post_type' => 'reports', 'posts_per_page' => -1) );
 							if ($custom_query_reports->have_posts()) : while ($custom_query_reports->have_posts()) : $custom_query_reports->the_post(); ?>
 								<div class="swiper-slide">
-									<a href="#">
+									<a href="<?php carbon_get_the_post_meta('crb_reports_file') ?>" download>
 										<div class="p_about__reports-item">
 											<img src="<?php bloginfo('template_url') ?>/img/xls.svg" width=65px alt="">
 											<p>
