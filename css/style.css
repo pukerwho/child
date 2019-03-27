@@ -1,6 +1,22 @@
 @font-face {
   font-family: 'ArciformSanscyr-lat';
   src: url("../fonts/arciformSanscyr.otf"); }
+@font-face {
+  font-family: 'Roboto Regular';
+  src: url("../fonts/Roboto-Regular.eot");
+  src: url("../fonts/Roboto-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto-Regular.woff") format("woff"), url("../fonts/Roboto-Regular.ttf") format("truetype"); }
+@font-face {
+  font-family: 'Roboto Light';
+  src: url("../fonts/Roboto-Light.eot");
+  src: url("../fonts/Roboto-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto-Light.woff") format("woff"), url("../fonts/Roboto-Light.ttf") format("truetype"); }
+@font-face {
+  font-family: 'Roboto Bold';
+  src: url("../fonts/Roboto-Bold.eot");
+  src: url("../fonts/Roboto-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto-Bold.woff") format("woff"), url("../fonts/Roboto-Bold.ttf") format("truetype"); }
+@font-face {
+  font-family: 'ProximaNova';
+  src: url("../fonts/ProximaNova-Regular.eot");
+  src: url("../fonts/ProximaNova-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/ProximaNova-Regular.woff") format("woff"), url("../fonts/ProximaNova-Regular.ttf") format("truetype"); }
 /*!
  * Bootstrap v4.1.3 (https://getbootstrap.com/)
  * Copyright 2011-2018 The Bootstrap Authors
@@ -8948,7 +8964,7 @@ a.text-dark:hover, a.text-dark:focus {
     color: inherit;
     border-color: #dee2e6; } }
 body {
-  font-family: 'Roboto', sans-serif; }
+  font-family: 'Roboto Regular'; }
 
 ul {
   margin: 0;
@@ -9006,6 +9022,14 @@ a:hover {
     height: 100%;
     -o-object-fit: cover;
     object-fit: cover; }
+
+blockquote {
+  color: #1664da;
+  font-family: 'Roboto Light';
+  font-size: 20px;
+  font-weight: 300;
+  border-left: 6px solid #f3f3f3;
+  padding-left: 13px; }
 
 .p-relative {
   position: relative; }
@@ -9118,7 +9142,8 @@ a:hover {
       .header__menu li:last-child {
         margin-right: 0; }
     .header__menu a {
-      position: relative; }
+      position: relative;
+      font-family: 'Roboto Light'; }
       .header__menu a:after {
         content: '';
         width: 0%;
@@ -9171,6 +9196,7 @@ a:hover {
   .footer__social a {
     width: 44px;
     height: 44px;
+    font-family: 'Roboto Light';
     background-color: #f9f9f9;
     display: -webkit-box;
     display: -webkit-flex;
@@ -9188,8 +9214,8 @@ a:hover {
     border-radius: 50%; }
   .footer__heading {
     color: #858585;
+    font-family: 'Roboto Bold';
     font-size: 17px;
-    font-weight: 500;
     margin-bottom: 15px; }
   .footer__links a {
     color: #858585;
@@ -9218,12 +9244,14 @@ a:hover {
       margin-bottom: 28px; }
   .footer__copyright {
     color: #858585;
+    font-family: 'Roboto Light';
     font-size: 14px;
     font-weight: 300;
     border-top: 1px solid #cccdce;
     padding: 20px; }
   .footer #footer_menu li:first-of-type a {
     color: #0046ca;
+    font-family: 'Roboto Bold';
     font-weight: 700; }
 
 #welcome {
@@ -9285,6 +9313,7 @@ a:hover {
   .p_page__welcome-text {
     width: 55%;
     color: #ffffff;
+    font-family: 'Roboto Light';
     font-size: 17px;
     font-weight: 300;
     line-height: 1.59; }
@@ -9384,18 +9413,18 @@ a:hover {
   margin-bottom: 47px; }
 .single__title {
   color: #ffffff;
-  font-family: Roboto;
+  font-family: 'Roboto Regular';
   font-size: 40px;
   font-weight: 500; }
 .single__subtitle {
   color: #1664da;
-  font-family: Roboto;
+  font-family: 'Roboto Light';
   font-size: 32px;
   font-weight: 300;
   text-align: center; }
 .single__content {
   color: #606060;
-  font-family: Roboto;
+  font-family: 'Roboto Light';
   font-size: 17px;
   font-weight: 300;
   font-style: normal; }
@@ -9422,7 +9451,7 @@ a:hover {
   -ms-flex-align: center;
   align-items: center;
   color: #ffffff;
-  font-family: Roboto;
+  font-family: 'Roboto Regular';
   font-size: 10px;
   font-weight: normal;
   cursor: pointer;
@@ -9494,14 +9523,19 @@ a:hover {
   padding-top: 54px; }
   .b_about__title {
     color: #1664da;
+    font-family: 'Roboto Light';
     font-size: 32px;
     font-weight: 300;
     margin-bottom: 30px; }
   .b_about__text {
     color: #606060;
+    font-family: 'Roboto Light';
     font-size: 17px;
     font-weight: 300;
     margin-bottom: 30px; }
+  .b_about__more {
+    color: #606060;
+    font-family: 'Roboto Bold'; }
   .b_about__btn {
     width: 39px;
     height: 39px;
@@ -9547,6 +9581,7 @@ a:hover {
     margin-bottom: 40px; }
   .b_about__item-text {
     color: #606060;
+    font-family: 'Roboto Light';
     font-size: 17px;
     font-weight: 300;
     text-align: center; }
@@ -9644,6 +9679,7 @@ a:hover {
   background-color: #1664da; }
   .p_about__partners-title {
     color: #ffffff;
+    font-family: 'Roboto Light';
     font-size: 32px;
     font-weight: 300;
     margin-bottom: 78px; }
@@ -9663,7 +9699,7 @@ a:hover {
     margin-bottom: 10px; }
   .p_about__reports-item p {
     color: #1664da;
-    font-family: Roboto;
+    font-family: 'Roboto Light';
     font-size: 17px;
     font-weight: 300;
     line-height: 1.59;
@@ -9672,7 +9708,7 @@ a:hover {
     padding: 0; }
   .p_about__reports-title {
     color: #1664da;
-    font-family: Roboto;
+    font-family: 'Roboto Light';
     font-size: 32px;
     font-weight: 300;
     text-align: center;
@@ -9680,7 +9716,7 @@ a:hover {
   .p_about__reports-text {
     min-width: 590px;
     color: #606060;
-    font-family: Roboto;
+    font-family: 'Roboto Light';
     font-size: 17px;
     font-weight: 300;
     line-height: 1.59;
@@ -9764,6 +9800,9 @@ a:hover {
 .swiper-reports-next {
   -webkit-transform: translateY(-50%) rotateY(180deg);
   transform: translateY(-50%) rotateY(180deg); }
+
+#Finstructura {
+  display: none; }
 
 .b_projects {
   background-color: #fdd25d;
@@ -9884,12 +9923,14 @@ a:hover {
         object-fit: cover; }
     .b_projects__item-title {
       color: #606060;
+      font-family: 'Roboto Light';
       font-size: 25px;
       font-weight: 300;
       padding: 0 10px;
       margin-bottom: 28px; }
     .b_projects__item-date {
       color: #858585;
+      font-family: 'Roboto Light';
       font-size: 17px;
       font-weight: 300;
       padding: 0 10px; }
@@ -9938,6 +9979,7 @@ a:hover {
   margin-bottom: 46px; }
 .p_contact__subtitle {
   color: #1664da;
+  font-family: 'Roboto Light';
   font-size: 24px;
   font-style: normal;
   line-height: 1.67;
@@ -9951,6 +9993,7 @@ a:hover {
   margin-bottom: 80px; }
 .p_contact__text {
   color: #606060;
+  font-family: 'Roboto Light';
   font-size: 18px;
   font-weight: 300; }
   .p_contact__text-address {
@@ -10029,6 +10072,7 @@ a:hover {
   padding-bottom: 70px; }
   .b_news__title {
     color: #1664da;
+    font-family: 'Roboto Light';
     font-size: 32px;
     font-weight: 300;
     margin-bottom: 50px; }
@@ -10036,11 +10080,15 @@ a:hover {
     -webkit-box-shadow: 0 1px 4px 0 rgba(175, 175, 175, 0.39);
     box-shadow: 0 1px 4px 0 rgba(175, 175, 175, 0.39);
     background-color: #ffffff;
+    -webkit-transition: all 0.25s;
+    -o-transition: all 0.25s;
     transition: all 0.25s;
     padding-bottom: 10px; }
     .b_news__item:hover {
       -webkit-box-shadow: 0 2px 18px 0 rgba(175, 175, 175, 0.39);
       box-shadow: 0 2px 18px 0 rgba(175, 175, 175, 0.39);
+      -webkit-transition: all 0.25s;
+      -o-transition: all 0.25s;
       transition: all 0.25s; }
     .b_news__item-img {
       height: 255px;
@@ -10053,17 +10101,20 @@ a:hover {
     .b_news__item-title {
       min-height: 90px;
       color: #1664da;
+      font-family: 'Roboto Light';
       font-size: 20px;
       font-weight: 300;
       margin-bottom: 15px;
       padding: 0 15px; }
     .b_news__item-date {
       color: #858585;
+      font-family: 'Roboto Light';
       font-size: 18px;
       font-weight: 300;
       padding: 0 15px; }
     .b_news__item-more {
       color: #606060;
+      font-family: 'Roboto Bold';
       font-size: 12px;
       padding: 0 15px; }
       .b_news__item-more span {
@@ -10299,6 +10350,7 @@ a:hover {
       object-fit: cover; }
   .b_ad__title {
     color: #1664da;
+    font-family: 'Roboto Light';
     font-size: 32px;
     font-weight: 300;
     margin-bottom: 50px; }
@@ -10313,17 +10365,20 @@ a:hover {
     padding: 37px 30px 32px 30px; }
     .b_ad__item-title {
       color: #606060;
+      font-family: 'Roboto Light';
       font-size: 30px;
       font-weight: 300;
       margin-bottom: 20px; }
     .b_ad__item-text {
       color: #606060;
+      font-family: 'Roboto Light';
       font-size: 17px;
       font-weight: 300;
       line-height: 1.59;
       margin-bottom: 30px; }
     .b_ad__item-more a {
-      color: #606060; }
+      color: #606060;
+      font-family: 'Roboto Bold'; }
     .b_ad__item .arrow-yellow {
       margin-right: 18px; }
     .b_ad__item-topstick {
@@ -10382,10 +10437,12 @@ a:hover {
   background-size: cover; }
   .b_bottom__title {
     color: #ffffff;
+    font-family: 'Roboto Light';
     font-size: 32px;
     font-weight: 300;
     margin-bottom: 30px; }
   .b_bottom__btn {
+    font-family: 'Roboto Bold';
     margin-bottom: 105px; }
     .b_bottom__btn .arrow-yellow {
       -webkit-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.29);

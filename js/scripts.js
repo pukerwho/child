@@ -52,6 +52,20 @@ function showNews(evt, tabName) {
   evt.currentTarget.className += " p_news__button-active";
 }
 
+function showReports(evt, tabName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("p_about__button");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace("p_about__button-active", "");
+  }
+  document.getElementById(tabName).style.display = "block";
+  evt.currentTarget.className += " p_about__button-active";
+}
+
 //Слайдер Анонси
 var swiper_ad_button_next = $('.swiper-ad-next');
 var swiper_ad_button_prev = $('.swiper-ad-prev');

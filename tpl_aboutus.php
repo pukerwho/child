@@ -47,6 +47,8 @@ Template Name: Про нас
 		  $custom_query_news = new WP_Query( array( 
 		  	'post_type' => 'members', 
 		  	'posts_per_page' => 6,
+		  	'orderby' => 'menu_order',
+		  	'order' => 'ASC'
 		  ) );
 		  if ($custom_query_news->have_posts()) : while ($custom_query_news->have_posts()) : $custom_query_news->the_post(); ?>
 				<div class="col-md-4">
@@ -69,6 +71,8 @@ Template Name: Про нас
 		  $custom_query_news = new WP_Query( array( 
 		  	'post_type' => 'members', 
 		  	'posts_per_page' => 6,
+		  	'orderby' => 'menu_order',
+		  	'order' => 'ASC',
 		  	'meta_query' => array(
 					array(
 						'key'     => 'crb_members_rada',
@@ -153,33 +157,64 @@ Template Name: Про нас
 						<?php _e('Структура фінансування', 'child-theme'); ?>
 					</div>
 				</div>
-				<div class="p_about__reports-items">
-					<div class="swiper-reports-prev">
-			    	<img src="<?php bloginfo('template_url') ?>/img/single-arrow.svg" width="40px" alt="">
-			    </div>
-			    <div class="swiper-reports-next">
-			    	<img src="<?php bloginfo('template_url') ?>/img/single-arrow.svg" width="40px" alt="">
-			    </div>
-					<div class="swiper-container about-reports-swiper">
-						<div class="swiper-wrapper">
-							<?php 
-							$custom_query_reports = new WP_Query( array( 'post_type' => 'reports', 'posts_per_page' => -1) );
-							if ($custom_query_reports->have_posts()) : while ($custom_query_reports->have_posts()) : $custom_query_reports->the_post(); ?>
-								<div class="swiper-slide">
-									<a href="<?php echo carbon_get_the_post_meta('crb_reports_file') ?>" download>
-										<div class="p_about__reports-item">
-											<img src="<?php bloginfo('template_url') ?>/img/xls.svg" width=65px alt="">
-											<p>
-												<?php the_title(); ?>
-											</p>
-										</div>
-									</a>
-								</div>
-							<?php endwhile; endif; ?>
+				<div id="Finreport" class="tabcontent p-relative">
+					<div class="p_about__reports-items">
+						<div class="swiper-reports-prev">
+				    	<img src="<?php bloginfo('template_url') ?>/img/single-arrow.svg" width="40px" alt="">
+				    </div>
+				    <div class="swiper-reports-next">
+				    	<img src="<?php bloginfo('template_url') ?>/img/single-arrow.svg" width="40px" alt="">
+				    </div>
+						<div class="swiper-container about-reports-swiper">
+							<div class="swiper-wrapper">
+								<?php 
+								$custom_query_reports = new WP_Query( array( 'post_type' => 'reports', 'posts_per_page' => -1) );
+								if ($custom_query_reports->have_posts()) : while ($custom_query_reports->have_posts()) : $custom_query_reports->the_post(); ?>
+									<div class="swiper-slide">
+										<a href="<?php echo carbon_get_the_post_meta('crb_reports_file') ?>" download>
+											<div class="p_about__reports-item">
+												<img src="<?php bloginfo('template_url') ?>/img/xls.svg" width=65px alt="">
+												<p>
+													<?php the_title(); ?>
+												</p>
+											</div>
+										</a>
+									</div>
+								<?php endwhile; endif; ?>
+							</div>
 						</div>
 					</div>
+					<div class="swiper-pagination about-reports-pagination"></div>
 				</div>
-				<div class="swiper-pagination about-reports-pagination"></div>
+				<div id="Finstructura" class="tabcontent p-relative">
+					<div class="p_about__reports-items">
+						<div class="swiper-reports-prev">
+				    	<img src="<?php bloginfo('template_url') ?>/img/single-arrow.svg" width="40px" alt="">
+				    </div>
+				    <div class="swiper-reports-next">
+				    	<img src="<?php bloginfo('template_url') ?>/img/single-arrow.svg" width="40px" alt="">
+				    </div>
+						<div class="swiper-container about-reports-swiper">
+							<div class="swiper-wrapper">
+								<?php 
+								$custom_query_reports = new WP_Query( array( 'post_type' => 'reports', 'posts_per_page' => 1) );
+								if ($custom_query_reports->have_posts()) : while ($custom_query_reports->have_posts()) : $custom_query_reports->the_post(); ?>
+									<div class="swiper-slide">
+										<a href="<?php echo carbon_get_the_post_meta('crb_reports_file') ?>" download>
+											<div class="p_about__reports-item">
+												<img src="<?php bloginfo('template_url') ?>/img/xls.svg" width=65px alt="">
+												<p>
+													<?php the_title(); ?>
+												</p>
+											</div>
+										</a>
+									</div>
+								<?php endwhile; endif; ?>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-pagination about-reports-pagination"></div>
+				</div>
 			</div>
 		</div>
 	</div>
