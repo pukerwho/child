@@ -9533,7 +9533,7 @@ blockquote {
     font-size: 17px;
     font-weight: 300;
     margin-bottom: 30px; }
-  .b_about__more {
+  .b_about__more a {
     color: #606060;
     font-family: 'Roboto Bold'; }
   .b_about__btn {
@@ -9803,6 +9803,37 @@ blockquote {
 
 #Finstructura {
   display: none; }
+
+.b_reports__button {
+  min-width: 231px;
+  min-height: 49px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  color: #1664da;
+  font-size: 16px;
+  text-align: center;
+  -webkit-border-radius: 24.5px;
+  border-radius: 24.5px;
+  border: solid 1px #1664da;
+  cursor: pointer; }
+  .b_reports__button-active {
+    color: #ffffff;
+    background-color: #1664da;
+    margin-right: 30px; }
+  .b_reports__button:first-child {
+    margin-right: 30px; }
+  .b_reports__button:last-child {
+    margin-right: 0px; }
 
 .b_projects {
   background-color: #fdd25d;

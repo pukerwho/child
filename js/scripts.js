@@ -52,18 +52,20 @@ function showNews(evt, tabName) {
   evt.currentTarget.className += " p_news__button-active";
 }
 
-function showReports(evt, tabName) {
+function showReports(evtReport, tabReportName) {
   var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tabcontent");
+  tabcontent = document.getElementsByClassName("tabcontent-report");
   for (i = 0; i < tabcontent.length; i++) {
     tabcontent[i].style.display = "none";
   }
-  tablinks = document.getElementsByClassName("p_about__button");
+  tablinks = document.getElementsByClassName("b_reports__button");
   for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace("p_about__button-active", "");
+    tablinks[i].className = tablinks[i].className.replace("b_reports__button-active", "");
   }
-  document.getElementById(tabName).style.display = "block";
-  evt.currentTarget.className += " p_about__button-active";
+  document.getElementById(tabReportName).style.display = "block";
+  evtReport.currentTarget.className += " b_reports__button-active";
+  mySwiperFinreport();
+  mySwiperFinstructura();
 }
 
 //Слайдер Анонси
@@ -113,18 +115,33 @@ var mySwiperAd = new Swiper('.about-partner-swiper', {
   },
 });
 
-//Слайдер Отчеты
-var swiper_reports_button_next = $('.swiper-reports-next');
-var swiper_reports_button_prev = $('.swiper-reports-prev');
-var mySwiperAd = new Swiper('.about-reports-swiper', {
+//Слайдер Фінансові звіти 
+var swiper_reports_finreport_button_next = $('.swiper-reports-next-finreport');
+var swiper_reports_finreport_button_prev = $('.swiper-reports-prev-finreport');
+var mySwiperFinreport = new Swiper('.about-reports-finreport-swiper', {
   slidesPerView: 8,
   spaceBetween: 66,
   navigation: {
-    nextEl: swiper_reports_button_next,
-    prevEl: swiper_reports_button_prev,
+    nextEl: swiper_reports_finreport_button_next,
+    prevEl: swiper_reports_finreport_button_prev,
   },
   pagination: {
-    el: '.about-reports-pagination',
+    el: '.about-reports-finreport-pagination',
+  },
+});
+
+//Слайдер Структура фінансування
+var swiper_reports_finstructura_button_next = $('.swiper-reports-next-finstructura');
+var swiper_reports_finstructura_button_prev = $('.swiper-reports-prev-finstructura');
+var mySwiperFinstructura = new Swiper('.about-reports-finstructura-swiper', {
+  slidesPerView: 8,
+  spaceBetween: 66,
+  navigation: {
+    nextEl: swiper_reports_finstructura_button_next,
+    prevEl: swiper_reports_finstructura_button_prev,
+  },
+  pagination: {
+    el: '.about-reports-finstructura-pagination',
   },
 });
 

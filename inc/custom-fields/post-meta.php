@@ -26,6 +26,8 @@ function crb_post_theme_options() {
   Container::make( 'post_meta', 'More' )
     ->where( 'post_type', '=', 'reports' )
     ->add_fields( array(
+      Field::make( 'checkbox', 'crb_reports_finreport', 'Фінансові звіти' )->set_option_value('no'),
+      Field::make( 'checkbox', 'crb_reports_finstructura', 'Структура фінансування' )->set_option_value('no'),
       Field::make( 'file', 'crb_reports_file', 'Завантажити файл (xls)' )->set_value_type( 'url' )
     ));
 }

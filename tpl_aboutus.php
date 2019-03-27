@@ -149,26 +149,36 @@ Template Name: Про нас
 				<div class="p_about__reports-text">
 					Щомісяця до 20 числа ми готуємо фінансовий звіт, де вказуємо усі пожертви, що ми отримали, та на що ми їх витратили.
 				</div>
-				<div class="p_about__buttons d-flex justify-content-center" style="margin-bottom: 80px;">
-					<div class="p_about__button p_about__button-active" onclick="showReports(event, 'Finreport')">
-						<?php _e(' Фінансові звіти ', 'child-theme'); ?>
+				<div class="b_reports__buttons d-flex justify-content-center" style="margin-bottom: 80px;">
+					<div class="b_reports__button b_reports__button-active" onclick="showReports(event, 'Finreport')">
+						<?php _e('Фінансові звіти ', 'child-theme'); ?>
 					</div>
-					<div class="p_about__button" onclick="showReports(event, 'Finstructura')">
+					<div class="b_reports__button" onclick="showReports(event, 'Finstructura')">
 						<?php _e('Структура фінансування', 'child-theme'); ?>
 					</div>
 				</div>
-				<div id="Finreport" class="tabcontent p-relative">
+				<div id="Finreport" class="tabcontent-report p-relative">
 					<div class="p_about__reports-items">
-						<div class="swiper-reports-prev">
+						<div class="swiper-reports-prev swiper-reports-prev-finreport">
 				    	<img src="<?php bloginfo('template_url') ?>/img/single-arrow.svg" width="40px" alt="">
 				    </div>
-				    <div class="swiper-reports-next">
+				    <div class="swiper-reports-next swiper-reports-next-finreport">
 				    	<img src="<?php bloginfo('template_url') ?>/img/single-arrow.svg" width="40px" alt="">
 				    </div>
-						<div class="swiper-container about-reports-swiper">
+						<div class="swiper-container about-reports-swiper about-reports-finreport-swiper">
 							<div class="swiper-wrapper">
 								<?php 
-								$custom_query_reports = new WP_Query( array( 'post_type' => 'reports', 'posts_per_page' => -1) );
+								$custom_query_reports = new WP_Query( array( 
+									'post_type' => 'reports', 
+									'posts_per_page' => -1,
+									'meta_query' => array(
+										array(
+											'key'     => 'crb_reports_finreport',
+											'value'   => 'no',
+											'compare' => '=',
+										),
+									)
+								) );
 								if ($custom_query_reports->have_posts()) : while ($custom_query_reports->have_posts()) : $custom_query_reports->the_post(); ?>
 									<div class="swiper-slide">
 										<a href="<?php echo carbon_get_the_post_meta('crb_reports_file') ?>" download>
@@ -184,20 +194,30 @@ Template Name: Про нас
 							</div>
 						</div>
 					</div>
-					<div class="swiper-pagination about-reports-pagination"></div>
+					<div class="swiper-pagination about-reports-pagination about-reports-finreport-pagination"></div>
 				</div>
-				<div id="Finstructura" class="tabcontent p-relative">
+				<div id="Finstructura" class="tabcontent-report p-relative">
 					<div class="p_about__reports-items">
-						<div class="swiper-reports-prev">
+						<div class="swiper-reports-prev swiper-reports-prev-finstructura">
 				    	<img src="<?php bloginfo('template_url') ?>/img/single-arrow.svg" width="40px" alt="">
 				    </div>
-				    <div class="swiper-reports-next">
+				    <div class="swiper-reports-next swiper-reports-next-finstructura">
 				    	<img src="<?php bloginfo('template_url') ?>/img/single-arrow.svg" width="40px" alt="">
 				    </div>
-						<div class="swiper-container about-reports-swiper">
+						<div class="swiper-container about-reports-swiper about-reports-finstructura-swiper">
 							<div class="swiper-wrapper">
 								<?php 
-								$custom_query_reports = new WP_Query( array( 'post_type' => 'reports', 'posts_per_page' => 1) );
+								$custom_query_reports = new WP_Query( array( 
+									'post_type' => 'reports', 
+									'posts_per_page' => 1,
+									'meta_query' => array(
+										array(
+											'key'     => 'crb_reports_finstructura',
+											'value'   => 'no',
+											'compare' => '=',
+										),
+									)
+								) );
 								if ($custom_query_reports->have_posts()) : while ($custom_query_reports->have_posts()) : $custom_query_reports->the_post(); ?>
 									<div class="swiper-slide">
 										<a href="<?php echo carbon_get_the_post_meta('crb_reports_file') ?>" download>
@@ -213,7 +233,7 @@ Template Name: Про нас
 							</div>
 						</div>
 					</div>
-					<div class="swiper-pagination about-reports-pagination"></div>
+					<div class="swiper-pagination about-reports-pagination about-reports-finstructura-pagination"></div>
 				</div>
 			</div>
 		</div>
