@@ -24,6 +24,11 @@ function crb_post_theme_options() {
       Field::make( 'media_gallery', 'crb_blogs_photos', 'Галерея' )->set_type( array( 'image' ) )
     ));
   Container::make( 'post_meta', 'More' )
+    ->where( 'post_type', '=', 'projects' )
+    ->add_fields( array(
+      Field::make( 'media_gallery', 'crb_projects_photos', 'Галерея' )->set_type( array( 'image' ) )
+    ));
+  Container::make( 'post_meta', 'More' )
     ->where( 'post_type', '=', 'reports' )
     ->add_fields( array(
       Field::make( 'checkbox', 'crb_reports_finreport', 'Фінансові звіти' )->set_option_value('no'),

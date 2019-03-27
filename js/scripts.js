@@ -64,8 +64,10 @@ function showReports(evtReport, tabReportName) {
   }
   document.getElementById(tabReportName).style.display = "block";
   evtReport.currentTarget.className += " b_reports__button-active";
-  mySwiperFinreport();
-  mySwiperFinstructura();
+  $('.tabcontent-report').trigger('resize');
+  reportFinstructuraSwiper();
+  reportFinreportSwiper();
+  
 }
 
 //Слайдер Анонси
@@ -88,7 +90,7 @@ var mySwiperAd = new Swiper('.ad-item-swiper', {
 //Слайдер Новости/Блог
 var swiper_single_button_next = $('.swiper-single-next');
 var swiper_single_button_prev = $('.swiper-single-prev');
-var mySwiperAd = new Swiper('.single-gallery-swiper', {
+var mySwiperGallery = new Swiper('.single-gallery-swiper', {
   slidesPerView: 4,
   spaceBetween: 30,
   navigation: {
@@ -103,7 +105,7 @@ var mySwiperAd = new Swiper('.single-gallery-swiper', {
 //Слайдер Партнеры
 var swiper_partner_button_next = $('.swiper-partner-next');
 var swiper_partner_button_prev = $('.swiper-partner-prev');
-var mySwiperAd = new Swiper('.about-partner-swiper', {
+var mySwiperPartner = new Swiper('.about-partner-swiper', {
   slidesPerView: 6,
   spaceBetween: 50,
   navigation: {
@@ -116,34 +118,40 @@ var mySwiperAd = new Swiper('.about-partner-swiper', {
 });
 
 //Слайдер Фінансові звіти 
-var swiper_reports_finreport_button_next = $('.swiper-reports-next-finreport');
-var swiper_reports_finreport_button_prev = $('.swiper-reports-prev-finreport');
-var mySwiperFinreport = new Swiper('.about-reports-finreport-swiper', {
-  slidesPerView: 8,
-  spaceBetween: 66,
-  navigation: {
-    nextEl: swiper_reports_finreport_button_next,
-    prevEl: swiper_reports_finreport_button_prev,
-  },
-  pagination: {
-    el: '.about-reports-finreport-pagination',
-  },
-});
+var reportFinreportSwiper = function() {
+  var swiper_reports_finreport_button_next = $('.swiper-reports-next-finreport');
+  var swiper_reports_finreport_button_prev = $('.swiper-reports-prev-finreport');
+  var mySwiperFinreport = new Swiper('.about-reports-finreport-swiper', {
+    slidesPerView: 8,
+    spaceBetween: 66,
+    navigation: {
+      nextEl: swiper_reports_finreport_button_next,
+      prevEl: swiper_reports_finreport_button_prev,
+    },
+    pagination: {
+      el: '.about-reports-finreport-pagination',
+    },
+  });
+}
+reportFinreportSwiper();
 
 //Слайдер Структура фінансування
-var swiper_reports_finstructura_button_next = $('.swiper-reports-next-finstructura');
-var swiper_reports_finstructura_button_prev = $('.swiper-reports-prev-finstructura');
-var mySwiperFinstructura = new Swiper('.about-reports-finstructura-swiper', {
-  slidesPerView: 8,
-  spaceBetween: 66,
-  navigation: {
-    nextEl: swiper_reports_finstructura_button_next,
-    prevEl: swiper_reports_finstructura_button_prev,
-  },
-  pagination: {
-    el: '.about-reports-finstructura-pagination',
-  },
-});
+var reportFinstructuraSwiper = function() {
+  var swiper_reports_finstructura_button_next = $('.swiper-reports-next-finstructura');
+  var swiper_reports_finstructura_button_prev = $('.swiper-reports-prev-finstructura');
+  var mySwiperFinstructura = new Swiper('.about-reports-finstructura-swiper', {
+    slidesPerView: 8,
+    spaceBetween: 66,
+    navigation: {
+      nextEl: swiper_reports_finstructura_button_next,
+      prevEl: swiper_reports_finstructura_button_prev,
+    },
+    pagination: {
+      el: '.about-reports-finstructura-pagination',
+    },
+  });
+}
+reportFinstructuraSwiper();
 
 //Back link
 $(document).on('click', '.single__back', function(){
