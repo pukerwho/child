@@ -21,8 +21,10 @@
 				<div class="b_bottom__partner">
 					<?php
 					$partners_info = carbon_get_theme_option( 'crb_partners' );
-					foreach ( $partners_info as $partner_info ): ?>
-						<img src="<?php echo $partner_info['crb_partners_img'] ?>" alt="">
+					foreach ( array_slice($partners_info, 0, 4)  as $partner_info ): ?>
+						<div class="b_bottom__partner-img">
+							<img src="<?php echo $partner_info['crb_partners_img'] ?>" alt="">	
+						</div>
 					<?php endforeach; ?>
 				</div>
 			</div>
