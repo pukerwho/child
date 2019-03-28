@@ -14,6 +14,7 @@ function crb_post_theme_options() {
   Container::make( 'post_meta', 'More' )
     ->where( 'post_type', '=', 'news' )
     ->add_fields( array(
+      Field::make( 'textarea', 'crb_news_description', 'Короткий опис' ),
       Field::make( 'checkbox', 'crb_news_newsroom', 'У Newsroom?' )->set_option_value('no'),
       Field::make( 'checkbox', 'crb_news_podii', 'Подія?' )->set_option_value('no'),
       Field::make( 'media_gallery', 'crb_news_photos', 'Галерея' )->set_type( array( 'image' ) )
@@ -21,6 +22,7 @@ function crb_post_theme_options() {
   Container::make( 'post_meta', 'More' )
     ->where( 'post_type', '=', 'blogs' )
     ->add_fields( array(
+      Field::make( 'textarea', 'crb_blogs_description', 'Короткий опис' ),
       Field::make( 'media_gallery', 'crb_blogs_photos', 'Галерея' )->set_type( array( 'image' ) )
     ));
   Container::make( 'post_meta', 'More' )

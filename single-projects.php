@@ -28,6 +28,7 @@
 					<?php echo carbon_get_the_post_meta('crb_projects_description') ?>
 				</div>
 			</div>
+			<?php endif ?>
 			<div class="col-md-12">
 				<div class="single__img">
 					<img src="<?php echo get_the_post_thumbnail_url(); ?>">	
@@ -50,7 +51,7 @@
 					<?php endforeach; ?>
 				</div>
 			</div>
-			<?php endif ?>	
+			
 		</div>
 	</div>
 	<?php if(carbon_get_the_post_meta('crb_projects_photos')): ?>
