@@ -21,12 +21,36 @@
 		</div>
 	</div>
 	<div class="container">
-		<div class="row justify-content-center mb-25">
+		<div class="row mb-25">
+			<?php if(carbon_get_the_post_meta('crb_projects_description')): ?>
 			<div class="col-md-10">
+				<div class="single__description">
+					<?php echo carbon_get_the_post_meta('crb_projects_description') ?>
+				</div>
+			</div>
+			<div class="col-md-12">
+				<div class="single__img">
+					<img src="<?php echo get_the_post_thumbnail_url(); ?>">	
+				</div>
+			</div>
+			<div class="col-md-7">
 				<div class="single__content">
 					<?php the_content(); ?>
 				</div>
 			</div>
+			<div class="col-md-5">
+				<div class="single__links">
+					<h3>Посилання</h3>
+					<?php
+					$project_links = carbon_get_the_post_meta( 'crb_projects_links' );
+					foreach ( $project_links as $project_link ): ?>
+						<div class="single__link">
+							<a href="<?php echo $project_link['crb_projects_link'] ?>"><?php echo $project_link['crb_projects_link'] ?></a>
+						</div>
+					<?php endforeach; ?>
+				</div>
+			</div>
+			<?php endif ?>	
 		</div>
 	</div>
 	<?php if(carbon_get_the_post_meta('crb_projects_photos')): ?>

@@ -26,6 +26,12 @@ function crb_post_theme_options() {
   Container::make( 'post_meta', 'More' )
     ->where( 'post_type', '=', 'projects' )
     ->add_fields( array(
+      Field::make( 'textarea', 'crb_projects_description', 'Короткий опис' ),
+      Field::make( 'complex', 'crb_projects_links', 'Links' )
+            ->set_layout( 'tabbed-horizontal')
+            ->add_fields( array(
+                Field::make( 'text', 'crb_projects_link', 'Посилання' ),
+        ) ),
       Field::make( 'media_gallery', 'crb_projects_photos', 'Галерея' )->set_type( array( 'image' ) )
     ));
   Container::make( 'post_meta', 'More' )
