@@ -64,10 +64,6 @@ function showReports(evtReport, tabReportName) {
   }
   document.getElementById(tabReportName).style.display = "block";
   evtReport.currentTarget.className += " b_reports__button-active";
-  $('.tabcontent-report').trigger('resize');
-  reportFinstructuraSwiper();
-  reportFinreportSwiper();
-  
 }
 
 //Слайдер Анонси
@@ -142,6 +138,8 @@ var reportFinstructuraSwiper = function() {
   var mySwiperFinstructura = new Swiper('.about-reports-finstructura-swiper', {
     slidesPerView: 8,
     spaceBetween: 66,
+    observer: true,
+    observeParents: true,
     navigation: {
       nextEl: swiper_reports_finstructura_button_next,
       prevEl: swiper_reports_finstructura_button_prev,
