@@ -11425,14 +11425,6 @@ button.swiper-pagination-bullet {
       font-size: 1.25rem;
       font-weight: 800;
       text-transform: uppercase; }
-      .mobile-cover a:hover:after {
-        height: 4px;
-        content: '';
-        position: absolute;
-        bottom: -10px;
-        left: 0;
-        right: 0;
-        background-color: #FFAE02; }
     .mobile-cover li:last-child {
       margin-bottom: 0; }
     .mobile-cover__open {
