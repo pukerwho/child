@@ -10388,6 +10388,9 @@ blockquote {
     justify-content: space-between;
     margin-bottom: 90px; }
 
+#AllTime {
+  display: none; }
+
 .b_ad {
   background-color: #f9fcff;
   padding-top: 70px;
@@ -11539,6 +11542,8 @@ button.swiper-pagination-bullet {
   #p_aboutus .p_about__button:first-child, #p_aboutus .b_reports__button:first-child {
     margin-right: 0;
     margin-bottom: 15px; }
+  #p_aboutus .p_about__partners-list {
+    padding: 0 55px; }
 
   #p_projects .p_page__welcome-title {
     margin-bottom: 145px; }

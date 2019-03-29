@@ -65,6 +65,21 @@ function showReports(evtReport, tabReportName) {
   evtReport.currentTarget.className += " b_reports__button-active";
 }
 
+function showDonats(evtDonate, tabDonatsName) {
+  console.log(tabDonatsName);
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent-donate");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("p_donate__button");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace("p_donate__button-active", "");
+  }
+  document.getElementById(tabDonatsName).style.display = "block";
+  evtDonate.currentTarget.className += " p_donate__button-active";
+}
+
 //Слайдер Анонси
 var swiper_ad_button_next = $('.swiper-ad-next');
 var swiper_ad_button_prev = $('.swiper-ad-prev');
