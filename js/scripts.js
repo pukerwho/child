@@ -85,17 +85,32 @@ var mySwiperAd = new Swiper('.ad-item-swiper', {
 //Слайдер Новости/Блог
 var swiper_single_button_next = $('.swiper-single-next');
 var swiper_single_button_prev = $('.swiper-single-prev');
-var mySwiperGallery = new Swiper('.single-gallery-swiper', {
-  slidesPerView: 4,
-  spaceBetween: 30,
-  navigation: {
-    nextEl: swiper_single_button_next,
-    prevEl: swiper_single_button_prev,
-  },
-  pagination: {
-    el: '.single-gallery-pagination',
-  },
-});
+if ($(document).width() > 960) {
+  var mySwiperGallery = new Swiper('.single-gallery-swiper', {
+    slidesPerView: 4,
+    spaceBetween: 30,
+    navigation: {
+      nextEl: swiper_single_button_next,
+      prevEl: swiper_single_button_prev,
+    },
+    pagination: {
+      el: '.single-gallery-pagination',
+    },
+  })
+};
+if ($(document).width() < 960) {
+  var mySwiperGallery = new Swiper('.single-gallery-swiper', {
+    slidesPerView: 2,
+    spaceBetween: 30,
+    navigation: {
+      nextEl: swiper_single_button_next,
+      prevEl: swiper_single_button_prev,
+    },
+    pagination: {
+      el: '.single-gallery-pagination',
+    },
+  })
+}
 
 //Слайдер Партнеры
 var swiper_partner_button_next = $('.swiper-partner-next');
