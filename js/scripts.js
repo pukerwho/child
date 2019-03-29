@@ -115,33 +115,63 @@ if ($(document).width() < 960) {
 //Слайдер Партнеры
 var swiper_partner_button_next = $('.swiper-partner-next');
 var swiper_partner_button_prev = $('.swiper-partner-prev');
-var mySwiperPartner = new Swiper('.about-partner-swiper', {
-  slidesPerView: 6,
-  spaceBetween: 50,
-  navigation: {
-    nextEl: swiper_partner_button_next,
-    prevEl: swiper_partner_button_prev,
-  },
-  pagination: {
-    el: '.about-partner-pagination',
-  },
-});
+if ($(document).width() > 960) {
+  var mySwiperPartner = new Swiper('.about-partner-swiper', {
+    slidesPerView: 6,
+    spaceBetween: 50,
+    navigation: {
+      nextEl: swiper_partner_button_next,
+      prevEl: swiper_partner_button_prev,
+    },
+    pagination: {
+      el: '.about-partner-pagination',
+    },
+  })
+};
+if ($(document).width() < 960) {
+  var mySwiperPartner = new Swiper('.about-partner-swiper', {
+    slidesPerView: 2,
+    spaceBetween: 50,
+    navigation: {
+      nextEl: swiper_partner_button_next,
+      prevEl: swiper_partner_button_prev,
+    },
+    pagination: {
+      el: '.about-partner-pagination',
+    },
+  })
+}
 
 //Слайдер Фінансові звіти 
 var reportFinreportSwiper = function() {
   var swiper_reports_finreport_button_next = $('.swiper-reports-next-finreport');
   var swiper_reports_finreport_button_prev = $('.swiper-reports-prev-finreport');
-  var mySwiperFinreport = new Swiper('.about-reports-finreport-swiper', {
-    slidesPerView: 8,
-    spaceBetween: 66,
-    navigation: {
-      nextEl: swiper_reports_finreport_button_next,
-      prevEl: swiper_reports_finreport_button_prev,
-    },
-    pagination: {
-      el: '.about-reports-finreport-pagination',
-    },
-  });
+  if ($(document).width() > 960) {
+    var mySwiperFinreport = new Swiper('.about-reports-finreport-swiper', {
+      slidesPerView: 8,
+      spaceBetween: 66,
+      navigation: {
+        nextEl: swiper_reports_finreport_button_next,
+        prevEl: swiper_reports_finreport_button_prev,
+      },
+      pagination: {
+        el: '.about-reports-finreport-pagination',
+      },
+    });
+  };
+  if ($(document).width() < 960) {
+    var mySwiperFinreport = new Swiper('.about-reports-finreport-swiper', {
+      slidesPerView: 3,
+      spaceBetween: 66,
+      navigation: {
+        nextEl: swiper_reports_finreport_button_next,
+        prevEl: swiper_reports_finreport_button_prev,
+      },
+      pagination: {
+        el: '.about-reports-finreport-pagination',
+      },
+    });
+  }
 }
 reportFinreportSwiper();
 
@@ -149,19 +179,36 @@ reportFinreportSwiper();
 var reportFinstructuraSwiper = function() {
   var swiper_reports_finstructura_button_next = $('.swiper-reports-next-finstructura');
   var swiper_reports_finstructura_button_prev = $('.swiper-reports-prev-finstructura');
-  var mySwiperFinstructura = new Swiper('.about-reports-finstructura-swiper', {
-    slidesPerView: 8,
-    spaceBetween: 66,
-    observer: true,
-    observeParents: true,
-    navigation: {
-      nextEl: swiper_reports_finstructura_button_next,
-      prevEl: swiper_reports_finstructura_button_prev,
-    },
-    pagination: {
-      el: '.about-reports-finstructura-pagination',
-    },
-  });
+  if ($(document).width() > 960) {
+    var mySwiperFinstructura = new Swiper('.about-reports-finstructura-swiper', {
+      slidesPerView: 8,
+      spaceBetween: 66,
+      observer: true,
+      observeParents: true,
+      navigation: {
+        nextEl: swiper_reports_finstructura_button_next,
+        prevEl: swiper_reports_finstructura_button_prev,
+      },
+      pagination: {
+        el: '.about-reports-finstructura-pagination',
+      },
+    })
+  }
+  if ($(document).width() < 960) {
+    var mySwiperFinstructura = new Swiper('.about-reports-finstructura-swiper', {
+      slidesPerView: 4,
+      spaceBetween: 66,
+      observer: true,
+      observeParents: true,
+      navigation: {
+        nextEl: swiper_reports_finstructura_button_next,
+        prevEl: swiper_reports_finstructura_button_prev,
+      },
+      pagination: {
+        el: '.about-reports-finstructura-pagination',
+      },
+    })
+  }
 }
 reportFinstructuraSwiper();
 
