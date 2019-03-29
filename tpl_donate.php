@@ -83,7 +83,7 @@ Template Name: Підтримати
 <div class="p_donate__props">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-12">
+			<div class="col-md-11 offset-md-1">
 				<div class="p_donate__props-title">
 					<?php _e('Реквізити фонду', 'child-theme'); ?>
 				</div>
