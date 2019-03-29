@@ -2,30 +2,37 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-				<div class="b_welcome__name">
-					<div class="b_welcome__c">
-						<img src="<?php bloginfo('template_url') ?>/img/c.png" srcset="<?php bloginfo('template_url') ?>/img/c@2x.png 2x, <?php bloginfo('template_url') ?>/img/c@3x.png 3x">
+				<div class="pc-show">
+					<div class="b_welcome__name">
+						<div class="b_welcome__c">
+							<img src="<?php bloginfo('template_url') ?>/img/c.png" srcset="<?php bloginfo('template_url') ?>/img/c@2x.png 2x, <?php bloginfo('template_url') ?>/img/c@3x.png 3x">
+						</div>
+						<div class="b_welcome__h">
+							<img src="<?php bloginfo('template_url') ?>/img/h.png" srcset="<?php bloginfo('template_url') ?>/img/h@2x.png 2x, <?php bloginfo('template_url') ?>/img/h@3x.png 3x">
+						</div>
+						<div class="b_welcome__i">
+							<img src="<?php bloginfo('template_url') ?>/img/i.png" srcset="<?php bloginfo('template_url') ?>/img/i@2x.png 2x, <?php bloginfo('template_url') ?>/img/i@3x.png 3x">
+						</div>
+						<div class="b_welcome__l">
+							<img src="<?php bloginfo('template_url') ?>/img/l.png" srcset="<?php bloginfo('template_url') ?>/img/l@2x.png 2x, <?php bloginfo('template_url') ?>/img/l@3x.png 3x">
+						</div>
+						<div class="b_welcome__d">
+							<img src="<?php bloginfo('template_url') ?>/img/d.png" srcset="<?php bloginfo('template_url') ?>/img/d@2x.png 2x, <?php bloginfo('template_url') ?>/img/d@3x.png 3x">
+						</div>
+						<div class="b_welcome__dot">
+							<img src="<?php bloginfo('template_url') ?>/img/dot.png" srcset="<?php bloginfo('template_url') ?>/img/dot@2x.png 2x, <?php bloginfo('template_url') ?>/img/dot@3x.png 3x">
+						</div>
+						<div class="b_welcome__a">
+							<img src="<?php bloginfo('template_url') ?>/img/a.png" srcset="<?php bloginfo('template_url') ?>/img/a@2x.png 2x, <?php bloginfo('template_url') ?>/img/a@3x.png 3x">
+						</div>
+						<div class="b_welcome__u">
+							<img src="<?php bloginfo('template_url') ?>/img/u.png" srcset="<?php bloginfo('template_url') ?>/img/u@2x.png 2x, <?php bloginfo('template_url') ?>/img/u@3x.png 3x">
+						</div>
 					</div>
-					<div class="b_welcome__h">
-						<img src="<?php bloginfo('template_url') ?>/img/h.png" srcset="<?php bloginfo('template_url') ?>/img/h@2x.png 2x, <?php bloginfo('template_url') ?>/img/h@3x.png 3x">
-					</div>
-					<div class="b_welcome__i">
-						<img src="<?php bloginfo('template_url') ?>/img/i.png" srcset="<?php bloginfo('template_url') ?>/img/i@2x.png 2x, <?php bloginfo('template_url') ?>/img/i@3x.png 3x">
-					</div>
-					<div class="b_welcome__l">
-						<img src="<?php bloginfo('template_url') ?>/img/l.png" srcset="<?php bloginfo('template_url') ?>/img/l@2x.png 2x, <?php bloginfo('template_url') ?>/img/l@3x.png 3x">
-					</div>
-					<div class="b_welcome__d">
-						<img src="<?php bloginfo('template_url') ?>/img/d.png" srcset="<?php bloginfo('template_url') ?>/img/d@2x.png 2x, <?php bloginfo('template_url') ?>/img/d@3x.png 3x">
-					</div>
-					<div class="b_welcome__dot">
-						<img src="<?php bloginfo('template_url') ?>/img/dot.png" srcset="<?php bloginfo('template_url') ?>/img/dot@2x.png 2x, <?php bloginfo('template_url') ?>/img/dot@3x.png 3x">
-					</div>
-					<div class="b_welcome__a">
-						<img src="<?php bloginfo('template_url') ?>/img/a.png" srcset="<?php bloginfo('template_url') ?>/img/a@2x.png 2x, <?php bloginfo('template_url') ?>/img/a@3x.png 3x">
-					</div>
-					<div class="b_welcome__u">
-						<img src="<?php bloginfo('template_url') ?>/img/u.png" srcset="<?php bloginfo('template_url') ?>/img/u@2x.png 2x, <?php bloginfo('template_url') ?>/img/u@3x.png 3x">
+				</div>
+				<div class="mobile-show">
+					<div class="b_welcome__name">
+						<img src="<?php bloginfo('template_url') ?>/img/mobile-logo.png" alt="">
 					</div>
 				</div>
 			</div>
