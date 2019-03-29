@@ -6,7 +6,7 @@
 						<div class="footer__top d-flex justify-content-between">
 							<div class="footer__logo">
 								<a href="<?php echo home_url(); ?>">
-									<img src="<?php bloginfo('template_url') ?>/img/logo.png" srcset="img/logo-01@2x.png 2x, img/logo-01@3x.png 3x" alt="Logo">
+									<img src="<?php bloginfo('template_url') ?>/img/logo.png" srcset="<?php bloginfo('template_url') ?>/img/logo-01@2x.png 2x, <?php bloginfo('template_url') ?>/img/logo-01@3x.png 3x" alt="Logo">
 								</a>
 							</div>
 							<div class="footer__social d-flex align-items-center">
