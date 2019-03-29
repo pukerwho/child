@@ -34,6 +34,15 @@ function crb_attach_theme_options() {
     ->add_tab( __('Блог'), array(
         Field::make( 'image', 'crb_blogs_p_thumb', 'Зображення в шапці на сторінці БЛОГ' )->set_value_type( 'url'),
     ) )
+    ->add_tab( __('Підтримати'), array(
+        Field::make( 'complex', 'crb_donate_payments', 'Способи оплати' )
+            ->set_layout( 'tabbed-horizontal')
+            ->add_fields( array(
+                Field::make( 'image', 'crb_donate_payment', 'Спосіб оплати' )->set_value_type( 'url'),
+        ) ),
+        Field::make( 'textarea', 'crb_donate_property_one', 'Реквізити фонду (Перший (лівий) стовпець)' ),
+        Field::make( 'textarea', 'crb_donate_property_two', 'Реквізити фонду (Другий (правий) стовпець)' ),
+    ) )
     ->add_tab( __('Контакти'), array(
         Field::make( 'text', 'crb_contact_email', 'Email' ),
         Field::make( 'complex', 'crb_contact_phones', 'Телефони' )

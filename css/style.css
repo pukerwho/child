@@ -10254,11 +10254,13 @@ blockquote {
   margin-bottom: 30px; }
 .p_donate__subtitle {
   color: #606060;
+  font-family: 'Roboto Regular';
   font-size: 20px;
   margin-bottom: 20px; }
 .p_donate__button {
   min-width: 180px;
   color: #1664da;
+  font-family: 'Roboto Regular';
   font-size: 16px;
   text-align: center;
   -webkit-border-radius: 24.5px;
@@ -10286,51 +10288,55 @@ blockquote {
   margin-right: 125px; }
 .p_donate__item-third {
   width: 350px; }
-.p_donate__form input {
-  width: 100%;
-  -webkit-border-radius: 6px;
-  border-radius: 6px;
-  border: solid 1px #ebebed;
-  background-color: #ffffff;
-  outline: none;
-  -webkit-transition: box-shadow 0.4s;
-  -o-transition: box-shadow 0.4s;
-  -webkit-transition: -webkit-box-shadow 0.4s;
-  transition: -webkit-box-shadow 0.4s;
-  transition: box-shadow 0.4s;
-  transition: box-shadow 0.4s, -webkit-box-shadow 0.4s;
-  padding: 14px 16px;
-  margin-bottom: 15px; }
-  .p_donate__form input:focus {
-    -webkit-box-shadow: 0 2px 10px 0 rgba(204, 204, 204, 0.28);
-    box-shadow: 0 2px 10px 0 rgba(204, 204, 204, 0.28);
-    color: #000000;
+.p_donate__form {
+  font-family: 'Roboto Regular'; }
+  .p_donate__form input {
+    width: 100%;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    border: solid 1px #ebebed;
+    background-color: #ffffff;
+    outline: none;
     -webkit-transition: box-shadow 0.4s;
     -o-transition: box-shadow 0.4s;
     -webkit-transition: -webkit-box-shadow 0.4s;
     transition: -webkit-box-shadow 0.4s;
     transition: box-shadow 0.4s;
-    transition: box-shadow 0.4s, -webkit-box-shadow 0.4s; }
-.p_donate__form button {
-  min-width: 225px;
-  color: #ffffff;
-  font-family: Helvetica;
-  font-size: 17px;
-  font-weight: bold;
-  text-align: center;
-  text-transform: uppercase;
-  -webkit-border-radius: 26.5px;
-  border-radius: 26.5px;
-  background-color: #f6a501;
-  padding: 15px 0;
-  margin-bottom: 61px; }
+    transition: box-shadow 0.4s, -webkit-box-shadow 0.4s;
+    padding: 14px 16px;
+    margin-bottom: 15px; }
+    .p_donate__form input:focus {
+      -webkit-box-shadow: 0 2px 10px 0 rgba(204, 204, 204, 0.28);
+      box-shadow: 0 2px 10px 0 rgba(204, 204, 204, 0.28);
+      color: #000000;
+      -webkit-transition: box-shadow 0.4s;
+      -o-transition: box-shadow 0.4s;
+      -webkit-transition: -webkit-box-shadow 0.4s;
+      transition: -webkit-box-shadow 0.4s;
+      transition: box-shadow 0.4s;
+      transition: box-shadow 0.4s, -webkit-box-shadow 0.4s; }
+  .p_donate__form button {
+    min-width: 225px;
+    color: #ffffff;
+    font-family: Helvetica;
+    font-size: 17px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    -webkit-border-radius: 26.5px;
+    border-radius: 26.5px;
+    background-color: #f6a501;
+    padding: 15px 0;
+    margin-bottom: 61px; }
 .p_donate__accept {
   color: #606060;
+  font-family: 'Roboto Light';
   font-size: 13px;
   font-weight: 300;
   margin-bottom: 40px; }
 .p_donate__notice {
   color: #606060;
+  font-family: 'Roboto Light';
   font-size: 15px;
   font-weight: 300;
   text-align: justify;
@@ -10344,6 +10350,7 @@ blockquote {
   padding-top: 54px; }
   .p_donate__props-title {
     color: #1664da;
+    font-family: 'Roboto Light';
     font-size: 32px;
     font-weight: 300;
     margin-bottom: 20px; }
@@ -10356,6 +10363,7 @@ blockquote {
     margin-bottom: 80px; }
   .p_donate__props-item {
     color: #606060;
+    font-family: 'Roboto Light';
     font-size: 17px;
     font-weight: 300;
     line-height: 1.59; }
