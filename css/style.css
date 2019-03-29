@@ -11512,6 +11512,32 @@ button.swiper-pagination-bullet {
       padding: 30px; }
 
   .b_bottom__partner-img {
-    margin-right: 35px; } }
+    margin-right: 35px; }
+
+  /* PAGES */
+  #p_aboutus .p_page__welcome {
+    margin-bottom: 50px; }
+    #p_aboutus .p_page__welcome-img {
+      right: 0;
+      left: 0;
+      text-align: center; }
+      #p_aboutus .p_page__welcome-img img {
+        width: 70%;
+        margin-bottom: 18px; }
+    #p_aboutus .p_page__welcome-heading {
+      color: #000000; }
+    #p_aboutus .p_page__welcome-text {
+      width: 100%;
+      color: #000000; }
+  #p_aboutus .p_about__buttons, #p_aboutus .b_reports__buttons {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding: 40px 15px !important; }
+  #p_aboutus .p_about__button:first-child, #p_aboutus .b_reports__button:first-child {
+    margin-right: 0;
+    margin-bottom: 15px; } }
 
 /*# sourceMappingURL=style.css.map */
