@@ -18,7 +18,7 @@
 						</div>
 					</a>
 					<div class="b_news__item-date">
-						23 серпня 2018
+						<?php echo get_the_date('j F Y') ?>
 					</div>
 					<div class="b_news__item-more d-flex align-items-center justify-content-end">
 						<a href="<?php echo get_permalink(); ?>"><span><?php _e('Читати більше', 'child-theme'); ?></span></a>
