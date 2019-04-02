@@ -3,7 +3,14 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="pc-show">
-					<div class="b_welcome__name">
+					<div class="b_welcome__video">
+						<video class="slider-video" onloadeddata="this.play();" playsinline autoplay="autoplay" muted loop>
+			        <source src="<?php bloginfo('template_url'); ?>/videos/welcome.mp4" type="video/mp4">
+			        <source src="<?php bloginfo('template_url'); ?>/videos/welcome.webm" type="video/webm">
+			        <source src="<?php bloginfo('template_url'); ?>/videos/welcome.ogv" type="video/ogg">
+			      </video>
+					</div>
+					<!-- <div class="b_welcome__name">
 						<div class="b_welcome__c">
 							<img src="<?php bloginfo('template_url') ?>/img/c.png" srcset="<?php bloginfo('template_url') ?>/img/c@2x.png 2x, <?php bloginfo('template_url') ?>/img/c@3x.png 3x">
 						</div>
@@ -28,7 +35,7 @@
 						<div class="b_welcome__u">
 							<img src="<?php bloginfo('template_url') ?>/img/u.png" srcset="<?php bloginfo('template_url') ?>/img/u@2x.png 2x, <?php bloginfo('template_url') ?>/img/u@3x.png 3x">
 						</div>
-					</div>
+					</div> -->
 				</div>
 				<div class="mobile-show">
 					<div class="b_welcome__name">
