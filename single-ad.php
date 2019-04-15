@@ -22,13 +22,6 @@
 	</div>
 	<div class="container">
 		<div class="row mb-25">
-			<?php if(carbon_get_the_post_meta('crb_ad_description')): ?>
-			<div class="col-md-10">
-				<div class="single__description">
-					<?php echo carbon_get_the_post_meta('crb_ad_description') ?>
-				</div>
-			</div>
-			<?php endif ?>
 			<div class="col-md-12">
 				<div class="single__content">
 					<?php the_content(); ?>
