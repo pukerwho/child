@@ -52,8 +52,23 @@ function theme_name_scripts() {
     wp_enqueue_script( 'swiper', get_template_directory_uri() . '/js/swiper.min.js','','',true);
     wp_enqueue_script( 'lightbox', get_template_directory_uri() . '/js/lightbox.min.js','','',true);
     wp_enqueue_script( 'scripts', get_template_directory_uri() . '/js/scripts.js', '','',true);
- 
-    wp_enqueue_script( 'loadmore' );
+    wp_register_script( 'loadmore_rada', get_stylesheet_directory_uri() . '/js/loadmore_rada.js', array('jquery'), true );
+    wp_localize_script( 'loadmore_rada', 'loadmore_params_rada', array(
+        'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php', // WordPress AJAX
+        'posts' => json_encode( $custom_query_member_rada->query_vars ), // everything about your loop is here
+        'current_page' => get_query_var( 'paged' ) ? get_query_var('paged') : 1,
+        'total' => $custom_query_member_rada->max_num_pages
+    ), true );
+    wp_enqueue_script( 'loadmore_rada' );
+
+    wp_register_script( 'loadmore_team', get_stylesheet_directory_uri() . '/js/loadmore_team.js', array('jquery'), true );
+    wp_localize_script( 'loadmore_team', 'loadmore_params_team', array(
+        'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php', // WordPress AJAX
+        'posts' => json_encode( $custom_query_member_team->query_vars ), // everything about your loop is here
+        'current_page' => get_query_var( 'paged' ) ? get_query_var('paged') : 1,
+        'total' => $custom_query_member_team->max_num_pages
+    ), true );
+    wp_enqueue_script( 'loadmore_team' );
 };
 
 //подключаем стили к админке
@@ -62,6 +77,45 @@ function load_custom_wp_admin_style() {
     wp_enqueue_style( 'custom_wp_admin_css' );
 }
 add_action( 'admin_enqueue_scripts', 'load_custom_wp_admin_style' );
+
+function loadmore_rada_ajax_handler(){
+  // prepare our arguments for the query
+  $args = json_decode( stripslashes( $_POST['query'] ), true );
+  $args['paged'] = $_POST['page'] + 1; 
+  $args['post_status'] = 'publish';
+  $args['post_type'] = 'members';
+  query_posts( $args );
+  $custom_query_member_rada = new WP_Query( array( 'post_type' => 'members', 'posts_per_page' => 6, 'paged' => $args['paged'], 'orderby' => 'menu_order', 'order' => 'ASC', 'meta_query' => array(array( 'key'     => 'crb_members_rada', 'value'   => 'no', 'compare' => '=')) ) );
+  if ($custom_query_member_rada->have_posts()) : while ($custom_query_member_rada->have_posts()) : $custom_query_member_rada->the_post();
+    echo '<div class="col-md-4 p_about__member-rada">';
+    get_template_part( 'blocks/about/about-member' );
+    echo '</div>';
+  endwhile; 
+  endif;
+  die;
+}
+
+add_action('wp_ajax_loadmore_rada', 'loadmore_rada_ajax_handler'); 
+add_action('wp_ajax_nopriv_loadmore_rada', 'loadmore_rada_ajax_handler');
+
+function loadmore_team_ajax_handler(){
+  // prepare our arguments for the query
+  $args = json_decode( stripslashes( $_POST['query'] ), true );
+  $args['paged'] = $_POST['page'] + 1; 
+  $args['post_type'] = 'members';
+  query_posts( $args );
+  $custom_query_member_team = new WP_Query( array( 'post_type' => 'members', 'posts_per_page' => 6, 'paged' => $args['paged'], 'orderby' => 'menu_order', 'order' => 'ASC' ) );
+  if ($custom_query_member_team->have_posts()) : while ($custom_query_member_team->have_posts()) : $custom_query_member_team->the_post();
+    echo '<div class="col-md-4 p_about__member-team">';
+    get_template_part( 'blocks/about/about-member' );
+    echo '</div>';
+  endwhile; 
+  endif;
+  die;
+}
+
+add_action('wp_ajax_loadmore_team', 'loadmore_team_ajax_handler'); 
+add_action('wp_ajax_nopriv_loadmore_team', 'loadmore_team_ajax_handler');
 
 function create_post_type() {
     register_post_type( 'news',

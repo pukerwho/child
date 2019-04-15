@@ -33,7 +33,7 @@ function showMemebers(evt, tabName) {
   for (i = 0; i < tablinks.length; i++) {
     tablinks[i].className = tablinks[i].className.replace("p_about__button-active", "");
   }
-  document.getElementById(tabName).style.display = "flex";
+  document.getElementById(tabName).style.display = "block";
   evt.currentTarget.className += " p_about__button-active";
 }
 

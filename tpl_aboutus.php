@@ -59,16 +59,18 @@ Template Name: Про нас
 			</div>
 		</div>
 		<div class="container">
-			<div id="Team" class="row tabcontent">
+			<div id="Team" class="tabcontent">
+				<div class="row member-list">
 				<?php 
-			  $custom_query_news = new WP_Query( array( 
+
+			  $custom_query_member_team = new WP_Query( array( 
 			  	'post_type' => 'members', 
 			  	'posts_per_page' => 6,
 			  	'orderby' => 'menu_order',
 			  	'order' => 'ASC'
 			  ) );
-			  if ($custom_query_news->have_posts()) : while ($custom_query_news->have_posts()) : $custom_query_news->the_post(); ?>
-					<div class="col-md-4">
+			  if ($custom_query_member_team->have_posts()) : while ($custom_query_member_team->have_posts()) : $custom_query_member_team->the_post(); ?>
+					<div class="col-md-4 p_about__member-team">
 						<div class="p_about__member">
 							<div class="p_about__member-img">
 								<img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="">
@@ -82,45 +84,43 @@ Template Name: Про нас
 						</div>
 					</div>
 				<?php endwhile; endif; ?>
-			</div>
-			<div id="Rada" class="row tabcontent">
-				<?php 
-			  $custom_query_news = new WP_Query( array( 
-			  	'post_type' => 'members', 
-			  	'posts_per_page' => 6,
-			  	'orderby' => 'menu_order',
-			  	'order' => 'ASC',
-			  	'meta_query' => array(
-						array(
-							'key'     => 'crb_members_rada',
-							'value'   => 'no',
-							'compare' => '=',
-						),
-					)
-			  ) );
-			  if ($custom_query_news->have_posts()) : while ($custom_query_news->have_posts()) : $custom_query_news->the_post(); ?>
-					<div class="col-md-4">
-						<div class="p_about__member">
-							<div class="p_about__member-img">
-								<img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="">
-							</div>
-							<div class="p_about__member-title">
-								<?php the_title(); ?>
-							</div>
-							<div class="p_about__member-subtitle">
-								<?php echo carbon_get_the_post_meta('crb_members_position'); ?>
-							</div>
-						</div>
-					</div>
-				<?php endwhile; endif; ?>
-			</div>
-			<div class="row">
-				<div class="col-md-12 text-center">
-					<a href="/members">
-						<div class="p_about__btn-more">
+				</div>
+				<div class="row">
+					<div class="col-md-12 text-center">
+						<div class="p_about__btn-more members_team_more">
 							<?php _e('Дивитись всіх', 'child-theme'); ?>
 						</div>
-					</a>
+					</div>
+				</div>
+			</div>
+			<div id="Rada" class="tabcontent">
+				<div class="member-list row">
+					<?php 
+				  $custom_query_member_rada = new WP_Query( array( 
+				  	'post_type' => 'members', 
+				  	'posts_per_page' => 6,
+				  	'orderby' => 'menu_order', 
+				  	'order' => 'ASC',
+				  	'meta_query' => array(
+							array(
+								'key'     => 'crb_members_rada',
+								'value'   => 'no',
+								'compare' => '=',
+							),
+						)
+				  ) );
+				  if ($custom_query_member_rada->have_posts()) : while ($custom_query_member_rada->have_posts()) : $custom_query_member_rada->the_post(); ?>
+						<div class="col-md-4 p_about__member-rada">
+							<?php get_template_part( 'blocks/about/about-member' ); ?>
+						</div>
+					<?php endwhile; endif; ?>
+				</div>
+				<div class="row">
+					<div class="col-md-12 text-center">
+						<div class="p_about__btn-more members_rada_more">
+							<?php _e('Дивитись всіх', 'child-theme'); ?>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -156,7 +156,7 @@ Template Name: Про нас
 			</div>
 		</div>
 	</div>
-	<div class="p_about__reports">
+	<!-- <div class="p_about__reports">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
@@ -255,7 +255,7 @@ Template Name: Про нас
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> -->
 </section>
 
 <section id="b_main_img">

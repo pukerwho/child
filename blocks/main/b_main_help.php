@@ -3,7 +3,7 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="b_bottom__title">
-					<?php _e('Допомагати - це просто!', 'child-theme'); ?>
+					<?php _e('Разом ми змінюємо життя дітей накраще!', 'child-theme'); ?>
 				</div>
 				<a href="/donate">
 				<div class="b_bottom__btn d-flex align-items-center">
