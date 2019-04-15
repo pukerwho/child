@@ -34,7 +34,7 @@
 										<?php the_title(); ?>
 									</div>
 									<div class="b_ad__item-text">
-										<?php the_content(); ?>
+										<?php echo carbon_get_the_post_meta('crb_ad_description') ?>
 									</div>
 									<div class="b_ad__item-more d-flex justify-content-end align-items-center">
 										<div class="arrow-yellow">

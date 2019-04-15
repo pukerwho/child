@@ -20,6 +20,11 @@ function crb_post_theme_options() {
       Field::make( 'media_gallery', 'crb_news_photos', 'Галерея' )->set_type( array( 'image' ) )
   	));
   Container::make( 'post_meta', 'More' )
+    ->where( 'post_type', '=', 'ad' )
+    ->add_fields( array(
+      Field::make( 'textarea', 'crb_ad_description', 'Короткий опис' ),
+    ));
+  Container::make( 'post_meta', 'More' )
     ->where( 'post_type', '=', 'blogs' )
     ->add_fields( array(
       Field::make( 'textarea', 'crb_blogs_description', 'Короткий опис' ),
