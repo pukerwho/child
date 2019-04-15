@@ -62,7 +62,6 @@ Template Name: Про нас
 			<div id="Team" class="tabcontent">
 				<div class="row member-list">
 				<?php 
-
 			  $custom_query_member_team = new WP_Query( array( 
 			  	'post_type' => 'members', 
 			  	'posts_per_page' => 6,

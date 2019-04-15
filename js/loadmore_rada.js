@@ -16,16 +16,9 @@ jQuery(function($){
       },
       success : function( data ){
         if( data ) { 
-          button.text( 'Загрузить еще' ).prev().before(data); // insert new posts          
           loadmore_params_rada.current_page++;
           console.log(data);
           $('#Rada .member-list .col-md-4:last-of-type').after(data);
-          if ( loadmore_params_rada.current_page == loadmore_params_rada.max_page ) 
-            button.remove(); // if last page, remove the button
- 
-          // you can also fire the "post-load" event here if you use a plugin that requires it
-          // $( document.body ).trigger( 'post-load' );
-        } else {
           button.remove(); // if no data, remove the button as well
         }
       }

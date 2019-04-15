@@ -18,15 +18,10 @@ jQuery(function($){
         if( data ) { 
           button.text( 'Загрузить еще' ).prev().before(data); // insert new posts          
           loadmore_params_team.current_page++;
+          console.log(loadmore_params_team.total);
           console.log(data);
           $('#Team .member-list .col-md-4:last-of-type').after(data);
-          if ( (loadmore_params_team.current_page - 1) == loadmore_params_team.max_page ) 
-            button.remove(); // if last page, remove the button
- 
-          // you can also fire the "post-load" event here if you use a plugin that requires it
-          // $( document.body ).trigger( 'post-load' );
-        } else {
-          button.remove(); // if no data, remove the button as well
+          button.remove();
         }
       }
     });
